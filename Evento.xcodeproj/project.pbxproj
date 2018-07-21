@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1153301CEFB47C5F43CFC42F /* Pods_EventoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A081031D2DB48353415DBF /* Pods_EventoTests.framework */; };
 		95762F5C21035E1300309296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95762F5B21035E1300309296 /* AppDelegate.swift */; };
 		95762F5E21035E1300309296 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95762F5D21035E1300309296 /* ViewController.swift */; };
 		95762F6121035E1300309296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95762F5F21035E1300309296 /* Main.storyboard */; };
@@ -14,6 +15,23 @@
 		95762F6621035E1300309296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95762F6421035E1300309296 /* LaunchScreen.storyboard */; };
 		95762F7121035E1400309296 /* EventoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95762F7021035E1400309296 /* EventoTests.swift */; };
 		95762F7C21035E1400309296 /* EventoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95762F7B21035E1400309296 /* EventoUITests.swift */; };
+		95ADA38D2103609500C4E2D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA38C2103609500C4E2D3 /* LoginViewController.swift */; };
+		95ADA38F210360A300C4E2D3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA38E210360A200C4E2D3 /* RegisterViewController.swift */; };
+		95ADA391210363F800C4E2D3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA390210363F800C4E2D3 /* OnboardingViewController.swift */; };
+		95ADA39D210364F000C4E2D3 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA393210364EF00C4E2D3 /* ToggleTorchButton.swift */; };
+		95ADA39E210364F000C4E2D3 /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA394210364EF00C4E2D3 /* ReaderOverlayView.swift */; };
+		95ADA39F210364F000C4E2D3 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA395210364EF00C4E2D3 /* QRCodeReaderViewController.swift */; };
+		95ADA3A0210364F000C4E2D3 /* QRCodeReaderViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA396210364EF00C4E2D3 /* QRCodeReaderViewControllerDelegate.swift */; };
+		95ADA3A1210364F000C4E2D3 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA397210364EF00C4E2D3 /* SwitchCameraButton.swift */; };
+		95ADA3A2210364F000C4E2D3 /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA398210364EF00C4E2D3 /* QRCodeReader.swift */; };
+		95ADA3A3210364F000C4E2D3 /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA399210364F000C4E2D3 /* QRCodeReaderResult.swift */; };
+		95ADA3A4210364F000C4E2D3 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA39A210364F000C4E2D3 /* QRCodeReaderView.swift */; };
+		95ADA3A5210364F000C4E2D3 /* QRCodeReaderViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA39B210364F000C4E2D3 /* QRCodeReaderViewControllerBuilder.swift */; };
+		95ADA3A6210364F000C4E2D3 /* QRCodeReaderViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA39C210364F000C4E2D3 /* QRCodeReaderViewContainer.swift */; };
+		95ADA3A821036EE900C4E2D3 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3A721036EE900C4E2D3 /* QRViewController.swift */; };
+		95ADA3AA2103898A00C4E2D3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3A92103898900C4E2D3 /* Constants.swift */; };
+		C477C53683D8540E970A60D0 /* Pods_EventoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77BDDBA82114F9E00D96C98 /* Pods_EventoUITests.framework */; };
+		DBC1E66545F09EA2B180D72A /* Pods_Evento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9680876487DDE5FFC0E1176 /* Pods_Evento.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34A081031D2DB48353415DBF /* Pods_EventoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43A6FDD5F5862EB6B2A31708 /* Pods-EventoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventoTests/Pods-EventoTests.release.xcconfig"; sourceTree = "<group>"; };
+		586980DF089ED8FD1DB2CF60 /* Pods-EventoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventoUITests/Pods-EventoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		78A63F106EAB792A1A56BDB8 /* Pods-EventoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventoTests/Pods-EventoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7AE6C6D41FCFC726C7052C5E /* Pods-EventoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventoUITests/Pods-EventoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		95762F5821035E1300309296 /* Evento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95762F5B21035E1300309296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95762F5D21035E1300309296 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +70,25 @@
 		95762F7721035E1400309296 /* EventoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95762F7B21035E1400309296 /* EventoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoUITests.swift; sourceTree = "<group>"; };
 		95762F7D21035E1400309296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95ADA38C2103609500C4E2D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		95ADA38E210360A200C4E2D3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = /Users/saranshmittal/Development/Evento/Evento/RegisterViewController.swift; sourceTree = "<absolute>"; };
+		95ADA390210363F800C4E2D3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		95ADA393210364EF00C4E2D3 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTorchButton.swift; sourceTree = "<group>"; };
+		95ADA394210364EF00C4E2D3 /* ReaderOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderOverlayView.swift; sourceTree = "<group>"; };
+		95ADA395210364EF00C4E2D3 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
+		95ADA396210364EF00C4E2D3 /* QRCodeReaderViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewControllerDelegate.swift; sourceTree = "<group>"; };
+		95ADA397210364EF00C4E2D3 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
+		95ADA398210364EF00C4E2D3 /* QRCodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
+		95ADA399210364F000C4E2D3 /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderResult.swift; sourceTree = "<group>"; };
+		95ADA39A210364F000C4E2D3 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
+		95ADA39B210364F000C4E2D3 /* QRCodeReaderViewControllerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewControllerBuilder.swift; sourceTree = "<group>"; };
+		95ADA39C210364F000C4E2D3 /* QRCodeReaderViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewContainer.swift; sourceTree = "<group>"; };
+		95ADA3A721036EE900C4E2D3 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		95ADA3A92103898900C4E2D3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		991050C810D801B95AEC6225 /* Pods-Evento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evento.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Evento/Pods-Evento.debug.xcconfig"; sourceTree = "<group>"; };
+		B9680876487DDE5FFC0E1176 /* Pods_Evento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDDF952211BB210EF51799C2 /* Pods-Evento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evento.release.xcconfig"; path = "Pods/Target Support Files/Pods-Evento/Pods-Evento.release.xcconfig"; sourceTree = "<group>"; };
+		E77BDDBA82114F9E00D96C98 /* Pods_EventoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC1E66545F09EA2B180D72A /* Pods_Evento.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1153301CEFB47C5F43CFC42F /* Pods_EventoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +112,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C477C53683D8540E970A60D0 /* Pods_EventoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7864E7F8C45BE364A7F82BC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				991050C810D801B95AEC6225 /* Pods-Evento.debug.xcconfig */,
+				BDDF952211BB210EF51799C2 /* Pods-Evento.release.xcconfig */,
+				78A63F106EAB792A1A56BDB8 /* Pods-EventoTests.debug.xcconfig */,
+				43A6FDD5F5862EB6B2A31708 /* Pods-EventoTests.release.xcconfig */,
+				586980DF089ED8FD1DB2CF60 /* Pods-EventoUITests.debug.xcconfig */,
+				7AE6C6D41FCFC726C7052C5E /* Pods-EventoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		95762F4F21035E1300309296 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +139,8 @@
 				95762F6F21035E1400309296 /* EventoTests */,
 				95762F7A21035E1400309296 /* EventoUITests */,
 				95762F5921035E1300309296 /* Products */,
+				7864E7F8C45BE364A7F82BC2 /* Pods */,
+				B33D989DC40995F276E1F4C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +157,18 @@
 		95762F5A21035E1300309296 /* Evento */ = {
 			isa = PBXGroup;
 			children = (
+				95ADA392210364DE00C4E2D3 /* QR Scanner */,
+				95ADA38E210360A200C4E2D3 /* RegisterViewController.swift */,
 				95762F5B21035E1300309296 /* AppDelegate.swift */,
 				95762F5D21035E1300309296 /* ViewController.swift */,
 				95762F5F21035E1300309296 /* Main.storyboard */,
 				95762F6221035E1300309296 /* Assets.xcassets */,
 				95762F6421035E1300309296 /* LaunchScreen.storyboard */,
 				95762F6721035E1300309296 /* Info.plist */,
+				95ADA38C2103609500C4E2D3 /* LoginViewController.swift */,
+				95ADA3A721036EE900C4E2D3 /* QRViewController.swift */,
+				95ADA390210363F800C4E2D3 /* OnboardingViewController.swift */,
+				95ADA3A92103898900C4E2D3 /* Constants.swift */,
 			);
 			path = Evento;
 			sourceTree = "<group>";
@@ -125,6 +191,33 @@
 			path = EventoUITests;
 			sourceTree = "<group>";
 		};
+		95ADA392210364DE00C4E2D3 /* QR Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				95ADA398210364EF00C4E2D3 /* QRCodeReader.swift */,
+				95ADA399210364F000C4E2D3 /* QRCodeReaderResult.swift */,
+				95ADA39A210364F000C4E2D3 /* QRCodeReaderView.swift */,
+				95ADA39C210364F000C4E2D3 /* QRCodeReaderViewContainer.swift */,
+				95ADA395210364EF00C4E2D3 /* QRCodeReaderViewController.swift */,
+				95ADA39B210364F000C4E2D3 /* QRCodeReaderViewControllerBuilder.swift */,
+				95ADA396210364EF00C4E2D3 /* QRCodeReaderViewControllerDelegate.swift */,
+				95ADA394210364EF00C4E2D3 /* ReaderOverlayView.swift */,
+				95ADA397210364EF00C4E2D3 /* SwitchCameraButton.swift */,
+				95ADA393210364EF00C4E2D3 /* ToggleTorchButton.swift */,
+			);
+			path = "QR Scanner";
+			sourceTree = "<group>";
+		};
+		B33D989DC40995F276E1F4C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9680876487DDE5FFC0E1176 /* Pods_Evento.framework */,
+				34A081031D2DB48353415DBF /* Pods_EventoTests.framework */,
+				E77BDDBA82114F9E00D96C98 /* Pods_EventoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95762F8021035E1400309296 /* Build configuration list for PBXNativeTarget "Evento" */;
 			buildPhases = (
+				1965722A40068A61C4231D0A /* [CP] Check Pods Manifest.lock */,
 				95762F5421035E1300309296 /* Sources */,
 				95762F5521035E1300309296 /* Frameworks */,
 				95762F5621035E1300309296 /* Resources */,
+				E52DCBEC9AF62B17602E242F /* [CP] Embed Pods Frameworks */,
+				B7D451A4B92A5108FCF4DA32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95762F8321035E1400309296 /* Build configuration list for PBXNativeTarget "EventoTests" */;
 			buildPhases = (
+				F971FF817422774F9AF636BB /* [CP] Check Pods Manifest.lock */,
 				95762F6821035E1400309296 /* Sources */,
 				95762F6921035E1400309296 /* Frameworks */,
 				95762F6A21035E1400309296 /* Resources */,
+				8BD40FF80D48635D97566A1C /* [CP] Embed Pods Frameworks */,
+				472EAA7F1377BEEAC607ED92 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +266,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95762F8621035E1400309296 /* Build configuration list for PBXNativeTarget "EventoUITests" */;
 			buildPhases = (
+				52298274D625B8DCD3C3DC6B /* [CP] Check Pods Manifest.lock */,
 				95762F7321035E1400309296 /* Sources */,
 				95762F7421035E1400309296 /* Frameworks */,
 				95762F7521035E1400309296 /* Resources */,
+				9612EAB5B9FC490C5AEB4853 /* [CP] Embed Pods Frameworks */,
+				742CE2A2FDCFD368C1AC84EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,13 +356,178 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1965722A40068A61C4231D0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Evento-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		472EAA7F1377BEEAC607ED92 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventoTests/Pods-EventoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52298274D625B8DCD3C3DC6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EventoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		742CE2A2FDCFD368C1AC84EE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventoUITests/Pods-EventoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BD40FF80D48635D97566A1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventoTests/Pods-EventoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9612EAB5B9FC490C5AEB4853 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventoUITests/Pods-EventoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7D451A4B92A5108FCF4DA32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Evento/Pods-Evento-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E52DCBEC9AF62B17602E242F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Evento/Pods-Evento-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Evento/Pods-Evento-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F971FF817422774F9AF636BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EventoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		95762F5421035E1300309296 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95ADA39D210364F000C4E2D3 /* ToggleTorchButton.swift in Sources */,
+				95ADA3AA2103898A00C4E2D3 /* Constants.swift in Sources */,
+				95ADA3A2210364F000C4E2D3 /* QRCodeReader.swift in Sources */,
+				95ADA38D2103609500C4E2D3 /* LoginViewController.swift in Sources */,
+				95ADA3A821036EE900C4E2D3 /* QRViewController.swift in Sources */,
+				95ADA3A3210364F000C4E2D3 /* QRCodeReaderResult.swift in Sources */,
 				95762F5E21035E1300309296 /* ViewController.swift in Sources */,
+				95ADA3A6210364F000C4E2D3 /* QRCodeReaderViewContainer.swift in Sources */,
+				95ADA391210363F800C4E2D3 /* OnboardingViewController.swift in Sources */,
+				95ADA39E210364F000C4E2D3 /* ReaderOverlayView.swift in Sources */,
+				95ADA3A5210364F000C4E2D3 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
 				95762F5C21035E1300309296 /* AppDelegate.swift in Sources */,
+				95ADA3A1210364F000C4E2D3 /* SwitchCameraButton.swift in Sources */,
+				95ADA39F210364F000C4E2D3 /* QRCodeReaderViewController.swift in Sources */,
+				95ADA3A0210364F000C4E2D3 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
+				95ADA3A4210364F000C4E2D3 /* QRCodeReaderView.swift in Sources */,
+				95ADA38F210360A300C4E2D3 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,36 +691,41 @@
 		};
 		95762F8121035E1400309296 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 991050C810D801B95AEC6225 /* Pods-Evento.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JCRFV5ZL52;
 				INFOPLIST_FILE = Evento/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyblue.Evento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		95762F8221035E1400309296 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDDF952211BB210EF51799C2 /* Pods-Evento.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JCRFV5ZL52;
 				INFOPLIST_FILE = Evento/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyblue.Evento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		95762F8421035E1400309296 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78A63F106EAB792A1A56BDB8 /* Pods-EventoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +743,7 @@
 		};
 		95762F8521035E1400309296 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43A6FDD5F5862EB6B2A31708 /* Pods-EventoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +761,7 @@
 		};
 		95762F8721035E1400309296 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 586980DF089ED8FD1DB2CF60 /* Pods-EventoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +778,7 @@
 		};
 		95762F8821035E1400309296 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AE6C6D41FCFC726C7052C5E /* Pods-EventoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
