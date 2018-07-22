@@ -45,5 +45,7 @@
 	<string>Using the camera to scan QR code of the event</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

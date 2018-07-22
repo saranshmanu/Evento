@@ -71,12 +71,9 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         previewView.layer.addSublayer(reader.previewLayer)
         reader.startScanning()
         reader.didFindCode = { result in
-            let alert = UIAlertController(
-                title: "QRCodeReader",
-                message: String (format:"%@ (of type %@)", result.value, result.metadataType),
-                preferredStyle: .alert
-            )
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "homeTabBar")
+            self.present(controller, animated: true, completion: nil)
         }
     }
     
