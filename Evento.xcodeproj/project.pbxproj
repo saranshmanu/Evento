@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1153301CEFB47C5F43CFC42F /* Pods_EventoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A081031D2DB48353415DBF /* Pods_EventoTests.framework */; };
-		95501FBC2104C77D00BC67EF /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95501FBB2104C77D00BC67EF /* HomePageViewController.swift */; };
 		95501FBE2104CAB700BC67EF /* MoreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95501FBD2104CAB700BC67EF /* MoreDetailsViewController.swift */; };
 		95501FC02104DDAE00BC67EF /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95501FBF2104DDAE00BC67EF /* TimelineTableViewCell.swift */; };
 		95762F5C21035E1300309296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95762F5B21035E1300309296 /* AppDelegate.swift */; };
@@ -17,6 +16,12 @@
 		95762F6621035E1300309296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95762F6421035E1300309296 /* LaunchScreen.storyboard */; };
 		95762F7121035E1400309296 /* EventoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95762F7021035E1400309296 /* EventoTests.swift */; };
 		95762F7C21035E1400309296 /* EventoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95762F7B21035E1400309296 /* EventoUITests.swift */; };
+		95A073D121061F2D003275CD /* WifiCredentialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A073D021061F2D003275CD /* WifiCredentialsTableViewCell.swift */; };
+		95A073D321063F88003275CD /* BarcodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A073D221063F88003275CD /* BarcodeTableViewCell.swift */; };
+		95A073D5210650E3003275CD /* ScannedFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A073D4210650E3003275CD /* ScannedFoodTableViewCell.swift */; };
+		95A073D721066383003275CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A073D621066383003275CD /* HomeViewController.swift */; };
+		95A073D921066410003275CD /* SponsorsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A073D821066410003275CD /* SponsorsCollectionViewCell.swift */; };
+		95A073DB21066423003275CD /* SpeakersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A073DA21066423003275CD /* SpeakersCollectionViewCell.swift */; };
 		95ADA38D2103609500C4E2D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA38C2103609500C4E2D3 /* LoginViewController.swift */; };
 		95ADA38F210360A300C4E2D3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA38E210360A200C4E2D3 /* RegisterViewController.swift */; };
 		95ADA391210363F800C4E2D3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA390210363F800C4E2D3 /* OnboardingViewController.swift */; };
@@ -62,7 +67,6 @@
 		586980DF089ED8FD1DB2CF60 /* Pods-EventoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventoUITests/Pods-EventoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		78A63F106EAB792A1A56BDB8 /* Pods-EventoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventoTests/Pods-EventoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7AE6C6D41FCFC726C7052C5E /* Pods-EventoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventoUITests/Pods-EventoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		95501FBB2104C77D00BC67EF /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		95501FBD2104CAB700BC67EF /* MoreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsViewController.swift; sourceTree = "<group>"; };
 		95501FBF2104DDAE00BC67EF /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		95762F5821035E1300309296 /* Evento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evento.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +81,12 @@
 		95762F7721035E1400309296 /* EventoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95762F7B21035E1400309296 /* EventoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoUITests.swift; sourceTree = "<group>"; };
 		95762F7D21035E1400309296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95A073D021061F2D003275CD /* WifiCredentialsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiCredentialsTableViewCell.swift; sourceTree = "<group>"; };
+		95A073D221063F88003275CD /* BarcodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeTableViewCell.swift; sourceTree = "<group>"; };
+		95A073D4210650E3003275CD /* ScannedFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedFoodTableViewCell.swift; sourceTree = "<group>"; };
+		95A073D621066383003275CD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		95A073D821066410003275CD /* SponsorsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorsCollectionViewCell.swift; sourceTree = "<group>"; };
+		95A073DA21066423003275CD /* SpeakersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersCollectionViewCell.swift; sourceTree = "<group>"; };
 		95ADA38C2103609500C4E2D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		95ADA38E210360A200C4E2D3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = /Users/saranshmittal/Development/Evento/Evento/RegisterViewController.swift; sourceTree = "<absolute>"; };
 		95ADA390210363F800C4E2D3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -178,12 +188,17 @@
 				95ADA3A721036EE900C4E2D3 /* QRViewController.swift */,
 				95ADA390210363F800C4E2D3 /* OnboardingViewController.swift */,
 				95ADA3A92103898900C4E2D3 /* Constants.swift */,
-				95ADA3AD2103924B00C4E2D3 /* ScheduleViewController.swift */,
 				95ADA3B1210397C300C4E2D3 /* HomeTabBarController.swift */,
-				95501FBB2104C77D00BC67EF /* HomePageViewController.swift */,
-				95ADA3AF2103925B00C4E2D3 /* ProfileViewController.swift */,
 				95501FBD2104CAB700BC67EF /* MoreDetailsViewController.swift */,
+				95ADA3AD2103924B00C4E2D3 /* ScheduleViewController.swift */,
 				95501FBF2104DDAE00BC67EF /* TimelineTableViewCell.swift */,
+				95ADA3AF2103925B00C4E2D3 /* ProfileViewController.swift */,
+				95A073D021061F2D003275CD /* WifiCredentialsTableViewCell.swift */,
+				95A073D221063F88003275CD /* BarcodeTableViewCell.swift */,
+				95A073D4210650E3003275CD /* ScannedFoodTableViewCell.swift */,
+				95A073D621066383003275CD /* HomeViewController.swift */,
+				95A073D821066410003275CD /* SponsorsCollectionViewCell.swift */,
+				95A073DA21066423003275CD /* SpeakersCollectionViewCell.swift */,
 			);
 			path = Evento;
 			sourceTree = "<group>";
@@ -526,15 +541,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A073D721066383003275CD /* HomeViewController.swift in Sources */,
 				95ADA39D210364F000C4E2D3 /* ToggleTorchButton.swift in Sources */,
+				95A073D121061F2D003275CD /* WifiCredentialsTableViewCell.swift in Sources */,
 				95ADA3AA2103898A00C4E2D3 /* Constants.swift in Sources */,
 				95ADA3B2210397C300C4E2D3 /* HomeTabBarController.swift in Sources */,
 				95ADA3B02103925B00C4E2D3 /* ProfileViewController.swift in Sources */,
 				95ADA3A2210364F000C4E2D3 /* QRCodeReader.swift in Sources */,
 				95ADA38D2103609500C4E2D3 /* LoginViewController.swift in Sources */,
 				95ADA3A821036EE900C4E2D3 /* QRViewController.swift in Sources */,
+				95A073DB21066423003275CD /* SpeakersCollectionViewCell.swift in Sources */,
+				95A073D321063F88003275CD /* BarcodeTableViewCell.swift in Sources */,
 				95ADA3A3210364F000C4E2D3 /* QRCodeReaderResult.swift in Sources */,
-				95501FBC2104C77D00BC67EF /* HomePageViewController.swift in Sources */,
 				95ADA3A6210364F000C4E2D3 /* QRCodeReaderViewContainer.swift in Sources */,
 				95ADA391210363F800C4E2D3 /* OnboardingViewController.swift in Sources */,
 				95501FBE2104CAB700BC67EF /* MoreDetailsViewController.swift in Sources */,
@@ -544,7 +562,9 @@
 				95ADA3A5210364F000C4E2D3 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
 				95762F5C21035E1300309296 /* AppDelegate.swift in Sources */,
 				95ADA3A1210364F000C4E2D3 /* SwitchCameraButton.swift in Sources */,
+				95A073D921066410003275CD /* SponsorsCollectionViewCell.swift in Sources */,
 				95ADA39F210364F000C4E2D3 /* QRCodeReaderViewController.swift in Sources */,
+				95A073D5210650E3003275CD /* ScannedFoodTableViewCell.swift in Sources */,
 				95ADA3A0210364F000C4E2D3 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
 				95ADA3A4210364F000C4E2D3 /* QRCodeReaderView.swift in Sources */,
 				95ADA38F210360A300C4E2D3 /* RegisterViewController.swift in Sources */,

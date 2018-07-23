@@ -8,61 +8,81 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0{
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "profileHeading", for: indexPath)
+            return cell
+        } else if indexPath.row == 1{
+            var code = "String(describing: address)"
+            let imageQR = displayQRCode(code: code)
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "profile", for: indexPath) as! BarcodeTableViewCell
+            let scaleX = cell.barcodeImage.frame.size.width / imageQR.extent.size.width
+            let scaleY = cell.barcodeImage.frame.size.height / imageQR.extent.size.height
+            let transformedImage = imageQR.applying(CGAffineTransform(scaleX: scaleX, y: scaleY))
+            cell.barcodeImage.image = UIImage(ciImage: transformedImage)
+            cell.barcodeImage.contentMode = .scaleAspectFit
+            cell.backView.layer.shadowColor = UIColor.black.cgColor
+            cell.backView.layer.shadowOpacity = 1
+            cell.backView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
+            cell.backView.layer.shadowRadius = 9
+            return cell
+        } else if indexPath.row == 2{
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "wifiHeading", for: indexPath)
+            return cell
+        } else if indexPath.row == 3{
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "wifiCredentials", for: indexPath) as! WifiCredentialsTableViewCell
+            cell.cardView.layer.shadowColor = UIColor.black.cgColor
+            cell.cardView.layer.shadowOpacity = 1
+            cell.cardView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
+            cell.cardView.layer.shadowRadius = 9
+            return cell
+        } else if indexPath.row == 4{
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "scannedHeading", for: indexPath)
+            return cell
+        } else {
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: "food", for: indexPath) as! ScannedFoodTableViewCell
+            cell.cardView.layer.shadowColor = UIColor.black.cgColor
+            cell.cardView.layer.shadowOpacity = 1
+            cell.cardView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
+            cell.cardView.layer.shadowRadius = 9
+            return cell
+        }
+    }
+    
 
+    @IBOutlet weak var profileTableView: UITableView!
     @IBAction func closeAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    var code = "String(describing: address)"
-    
-    func displayQRCodeImage() {
-        let scaleX = barcodeImage.frame.size.width / qrcodeImage.extent.size.width
-        let scaleY = barcodeImage.frame.size.height / qrcodeImage.extent.size.height
-        let transformedImage = qrcodeImage.applying(CGAffineTransform(scaleX: scaleX, y: scaleY))
-        barcodeImage.image = UIImage(ciImage: transformedImage)
-        barcodeImage.contentMode = .scaleAspectFit
+    func displayQRCode(code:String) -> CIImage {
+        var qrcodeImage: CIImage!
+        let data = code.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
+        let colorFilter = CIFilter(name: "CIFalseColor")
+        let filter = CIFilter(name: "CIQRCodeGenerator")
+        filter?.setValue(data, forKey: "inputMessage")
+        filter?.setValue("Q", forKey: "inputCorrectionLevel")
+        colorFilter?.setValue(filter?.outputImage, forKey: "inputImage")
+        colorFilter?.setValue(CIColor.init(red: 1, green: 1, blue: 1, alpha: 1), forKey: "inputColor1")
+        colorFilter?.setValue(CIColor(red: 0, green: 0, blue: 0, alpha: 1), forKey: "inputColor0") // Foreground or the barcode RED
+        qrcodeImage = colorFilter?.outputImage
+        return qrcodeImage
     }
     
-    @IBOutlet weak var barcodeImage: UIImageView!
-    var qrcodeImage: CIImage!
-    func displayQRCode(qr:String) {
-        var code = qr
-        if self.qrcodeImage == nil {
-            if code == "" {
-                return
-            }
-            let data = code.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
-            let colorFilter = CIFilter(name: "CIFalseColor")
-            let filter = CIFilter(name: "CIQRCodeGenerator")
-            filter?.setValue(data, forKey: "inputMessage")
-            filter?.setValue("Q", forKey: "inputCorrectionLevel")
-            colorFilter?.setValue(filter?.outputImage, forKey: "inputImage")
-            colorFilter?.setValue(CIColor.init(red: 0, green: 0, blue: 0, alpha: 0), forKey: "inputColor1")
-            colorFilter?.setValue(CIColor(red: 1, green: 1, blue: 1, alpha: 0.8), forKey: "inputColor0") // Foreground or the barcode RED
-            self.qrcodeImage = colorFilter?.outputImage
-            self.displayQRCodeImage()
-        }
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        displayQRCode(qr: code)
+        profileTableView.delegate = self
+        profileTableView.dataSource = self
+//        displayQRCode(qr: code)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
