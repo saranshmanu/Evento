@@ -9,7 +9,7 @@
 import UIKit
 
 class TimelineTableViewCell: UITableViewCell {
-    @IBOutlet weak var tick: NSLayoutConstraint!
+    @IBOutlet weak var tick: UIImageView!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var title: UILabel!

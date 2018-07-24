@@ -22,6 +22,23 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
             cell.title.text = flag["name"] as! String
             cell.time.text = flag["startTime"] as! String
             cell.date.text = flag["date"] as! String
+            let date = Date()
+            let calender = Calendar.current
+            let currentDate = date.timeIntervalSince1970
+            var isoDate = cell.date.text! + "T" + cell.time.text!
+            isoDate = String(isoDate.dropLast())
+            isoDate = String(isoDate.dropLast())
+            isoDate = String(isoDate.dropLast())
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy'T'HH:mm"
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            let sessionDate = dateFormatter.date(from:isoDate)!
+            let session = sessionDate.timeIntervalSince1970
+            if session <= currentDate {
+                cell.tick.isHidden = false
+            } else {
+                cell.tick.isHidden = true
+            }
         }
         return cell
     }

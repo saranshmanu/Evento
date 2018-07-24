@@ -11,8 +11,10 @@ import Alamofire
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var mealsSchedule = [NSDictionary]()
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 5 + mealsSchedule.count
     }
     @IBOutlet weak var statusPage: UIView!
     
@@ -53,6 +55,17 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.cardView.layer.shadowOpacity = 1
             cell.cardView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
             cell.cardView.layer.shadowRadius = 9
+            let flag = mealsSchedule[indexPath.row - 5] as! NSDictionary
+            cell.nameLabel.text = flag["name"] as! String
+            cell.dateLabel.text = flag["date"] as! String
+            cell.timeLabel.text = flag["startTime"] as! String
+            let participants = flag["participantsPresent"] as! [String]
+            print(participants, userID)
+            if participants.contains(userID) {
+                cell.tick.isHidden = false
+            } else {
+                cell.tick.isHidden = true
+            }
             return cell
         }
     }
@@ -82,7 +95,18 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidAppear(_ animated: Bool) {
         if isLogged == true {
             statusPage.isHidden = true
-            profileTableView.reloadData()
+            if session.count != 0{
+                mealsSchedule.removeAll()
+                let a = session
+                let b = a["event"] as! NSDictionary
+                let c = b["eventSessions"] as! [NSDictionary]
+                for i in c{
+                    if i["sessionType"] as! String == "Meal" {
+                        mealsSchedule.append(i)
+                    }
+                }
+                profileTableView.reloadData()
+            }
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "authentication")

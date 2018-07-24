@@ -113,6 +113,7 @@ class LoginViewController: UIViewController {
     }
     func editTextFieldView(textField:UITextField, color:UIColor){
         textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSForegroundColorAttributeName : color])
+        textField.layer.cornerRadius = 20
     }
     override func viewDidLoad() {
         super.viewDidLoad()

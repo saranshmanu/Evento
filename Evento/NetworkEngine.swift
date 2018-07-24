@@ -93,6 +93,7 @@ class networkEngine {
                         if let b:NSDictionary = a["user"] as! NSDictionary{
                             if b != nil{
                                 name = b["name"] as! String
+                                userID = b["_id"] as! String
                             }
                         }
                     }

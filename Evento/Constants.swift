@@ -17,6 +17,7 @@ var isLogged:Bool = false
 var token = ""
 var qrcode = ""
 var name = ""
+var userID = ""
 
 class constants {
     public static let baseURL = "https://ieee-evento.herokuapp.com"

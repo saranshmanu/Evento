@@ -9,6 +9,7 @@
 import UIKit
 
 class ScannedFoodTableViewCell: UITableViewCell {
+    @IBOutlet weak var tick: UIImageView!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
