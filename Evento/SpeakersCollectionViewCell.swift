@@ -9,5 +9,7 @@
 import UIKit
 
 class SpeakersCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var speakerImageLabel: UIImageView!
+    @IBOutlet weak var speakerNameLabel: UILabel!
+    @IBOutlet weak var speakerDesignationLabel: UILabel!
 }

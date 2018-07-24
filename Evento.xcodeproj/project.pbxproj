@@ -40,6 +40,7 @@
 		95ADA3AE2103924B00C4E2D3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3AD2103924B00C4E2D3 /* ScheduleViewController.swift */; };
 		95ADA3B02103925B00C4E2D3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3AF2103925B00C4E2D3 /* ProfileViewController.swift */; };
 		95ADA3B2210397C300C4E2D3 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3B1210397C300C4E2D3 /* HomeTabBarController.swift */; };
+		95B2DAD3210681C800F67771 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2DAD2210681C800F67771 /* NetworkEngine.swift */; };
 		C477C53683D8540E970A60D0 /* Pods_EventoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77BDDBA82114F9E00D96C98 /* Pods_EventoUITests.framework */; };
 		DBC1E66545F09EA2B180D72A /* Pods_Evento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9680876487DDE5FFC0E1176 /* Pods_Evento.framework */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,7 @@
 		95ADA3AD2103924B00C4E2D3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleViewController.swift; path = /Users/saranshmittal/Development/Evento/Evento/ScheduleViewController.swift; sourceTree = "<absolute>"; };
 		95ADA3AF2103925B00C4E2D3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		95ADA3B1210397C300C4E2D3 /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		95B2DAD2210681C800F67771 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		991050C810D801B95AEC6225 /* Pods-Evento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evento.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Evento/Pods-Evento.debug.xcconfig"; sourceTree = "<group>"; };
 		B9680876487DDE5FFC0E1176 /* Pods_Evento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDDF952211BB210EF51799C2 /* Pods-Evento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evento.release.xcconfig"; path = "Pods/Target Support Files/Pods-Evento/Pods-Evento.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,8 +189,6 @@
 				95ADA38C2103609500C4E2D3 /* LoginViewController.swift */,
 				95ADA3A721036EE900C4E2D3 /* QRViewController.swift */,
 				95ADA390210363F800C4E2D3 /* OnboardingViewController.swift */,
-				95ADA3A92103898900C4E2D3 /* Constants.swift */,
-				95ADA3B1210397C300C4E2D3 /* HomeTabBarController.swift */,
 				95501FBD2104CAB700BC67EF /* MoreDetailsViewController.swift */,
 				95ADA3AD2103924B00C4E2D3 /* ScheduleViewController.swift */,
 				95501FBF2104DDAE00BC67EF /* TimelineTableViewCell.swift */,
@@ -199,6 +199,9 @@
 				95A073D621066383003275CD /* HomeViewController.swift */,
 				95A073D821066410003275CD /* SponsorsCollectionViewCell.swift */,
 				95A073DA21066423003275CD /* SpeakersCollectionViewCell.swift */,
+				95ADA3B1210397C300C4E2D3 /* HomeTabBarController.swift */,
+				95B2DAD2210681C800F67771 /* NetworkEngine.swift */,
+				95ADA3A92103898900C4E2D3 /* Constants.swift */,
 			);
 			path = Evento;
 			sourceTree = "<group>";
@@ -506,10 +509,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Evento/Pods-Evento-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -543,6 +548,7 @@
 			files = (
 				95A073D721066383003275CD /* HomeViewController.swift in Sources */,
 				95ADA39D210364F000C4E2D3 /* ToggleTorchButton.swift in Sources */,
+				95B2DAD3210681C800F67771 /* NetworkEngine.swift in Sources */,
 				95A073D121061F2D003275CD /* WifiCredentialsTableViewCell.swift in Sources */,
 				95ADA3AA2103898A00C4E2D3 /* Constants.swift in Sources */,
 				95ADA3B2210397C300C4E2D3 /* HomeTabBarController.swift in Sources */,

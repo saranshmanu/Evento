@@ -13,8 +13,8 @@ class OnboardingViewController: UIPageViewController {
     fileprivate lazy var pages: [UIViewController] = {
         return [
             self.getViewController(withIdentifier: "pageControllerOne"),
-            self.getViewController(withIdentifier: "pageControllerTwo"),
-            self.getViewController(withIdentifier: "pageControllerThree"),
+//            self.getViewController(withIdentifier: "pageControllerTwo"),
+//            self.getViewController(withIdentifier: "pageControllerThree"),
             self.getViewController(withIdentifier: "qrCodeScanner")
         ]
     }()

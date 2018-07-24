@@ -212,11 +212,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cIf-je-KDD">
-                                                    <rect key="frame" x="15" y="23" width="85" height="67"/>
+                                                    <rect key="frame" x="15" y="23" width="98" height="67"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Inaugration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3T-hP-1Rl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="34"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="98" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -272,7 +272,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jh7-dz-5Lv"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qlu-Nx-R9t"/>
+                    <navigationItem key="navigationItem" id="qlu-Nx-R9t">
+                        <barButtonItem key="rightBarButtonItem" image="refresh" id="0Ot-gJ-YBO">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="refresh:" destination="APU-pA-TYv" id="IYa-lc-OSk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="timelineTableView" destination="q9k-TP-7t7" id="RDy-Gn-5yG"/>
                     </connections>
@@ -673,7 +680,7 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="42" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGa-cU-7Yt">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="42" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGa-cU-7Yt">
                                                         <rect key="frame" x="23" y="151.99999999999997" width="271" height="358.33333333333326"/>
                                                         <string key="text">The IEEE Techloop Congress is a place for people to come together, collaborate and network. With informative and engaging technical sessions on some of the most promising areas of technology like Artificial Intelligence , Blockchain Technology and Robotics, this is a place where future innovators and enthusiasts can grow, learn, and discuss their ideas. With some of the most knowledgeable and reputed speakers from all around the country present, ITC is bound to be the best place for delegates to gain experience from some of the best in their field. Techloop is an IEEE initiative which began with a simple objective: Students Teaching Students. Techloop provides an environment for students to learn from other students by the means of hands-on projects and interactive sessions. As the tagline, ‘stay in the loop’ suggests, Techloop truly keeps the students informed about all the happenings and developments in the technological industry. ITC presents three parallel techloop tracks: Machine Learning, Internet Of Things and Android Application Development.</string>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
@@ -726,8 +733,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="147" height="104"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dr" translatesAutoresizingMaskIntoConstraints="NO" id="9lE-Q2-oIR">
-                                                                    <rect key="frame" x="0.0" y="10" width="147" height="73"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9lE-Q2-oIR">
+                                                                    <rect key="frame" x="10" y="10" width="127" height="73"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="73" id="yul-gD-ziV"/>
                                                                     </constraints>
@@ -740,12 +747,12 @@
                                                                 </label>
                                                             </subviews>
                                                         </view>
-                                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="9lE-Q2-oIR" secondAttribute="trailing" id="3Su-EX-xah"/>
+                                                            <constraint firstAttribute="trailing" secondItem="9lE-Q2-oIR" secondAttribute="trailing" constant="10" id="3Su-EX-xah"/>
                                                             <constraint firstItem="jbX-GR-xTs" firstAttribute="centerX" secondItem="BTz-Uk-LCJ" secondAttribute="centerX" id="EKk-EI-TZ2"/>
                                                             <constraint firstAttribute="bottom" secondItem="jbX-GR-xTs" secondAttribute="bottom" constant="5" id="Nsq-Vk-pXz"/>
-                                                            <constraint firstItem="9lE-Q2-oIR" firstAttribute="leading" secondItem="BTz-Uk-LCJ" secondAttribute="leading" id="Ozx-MU-MXZ"/>
+                                                            <constraint firstItem="9lE-Q2-oIR" firstAttribute="leading" secondItem="BTz-Uk-LCJ" secondAttribute="leading" constant="10" id="Ozx-MU-MXZ"/>
                                                             <constraint firstItem="9lE-Q2-oIR" firstAttribute="top" secondItem="BTz-Uk-LCJ" secondAttribute="top" constant="10" id="TQX-Ef-cAX"/>
                                                             <constraint firstItem="jbX-GR-xTs" firstAttribute="top" secondItem="9lE-Q2-oIR" secondAttribute="bottom" constant="4" id="bQh-Us-Zoo"/>
                                                         </constraints>
@@ -819,7 +826,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Ch-Sx-6fQ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="f2Y-JP-ceZ"/>
+                    <navigationItem key="navigationItem" id="f2Y-JP-ceZ">
+                        <barButtonItem key="rightBarButtonItem" image="refresh" id="KrO-4v-8ZK">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="refresh:" destination="MDP-vR-981" id="hZ6-1n-lw3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="sponsorsCollectionView" destination="W0l-ML-DIm" id="gnw-gi-vnf"/>
@@ -856,14 +870,14 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="speakers" id="qTO-kE-zWq">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="speakers" id="qTO-kE-zWq" customClass="SpeakersCollectionViewCell" customModule="Evento" customModuleProvider="target">
                                                 <rect key="frame" x="28.666666666666668" y="0.0" width="327" height="346"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="327" height="346"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AbhijithN" translatesAutoresizingMaskIntoConstraints="NO" id="SwN-fF-6XC">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="SwN-fF-6XC">
                                                             <rect key="frame" x="68" y="53" width="191" height="191"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="SwN-fF-6XC" secondAttribute="height" multiplier="1:1" id="vhg-Ws-qw3"/>
@@ -888,7 +902,7 @@
                                                         </label>
                                                     </subviews>
                                                 </view>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="0.4629173801369863" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="mA0-aX-MoS" firstAttribute="leading" secondItem="qTO-kE-zWq" secondAttribute="leadingMargin" constant="44" id="05t-P8-WNL"/>
                                                     <constraint firstItem="SwN-fF-6XC" firstAttribute="top" secondItem="qTO-kE-zWq" secondAttribute="topMargin" constant="45" id="2d5-6F-Cyy"/>
@@ -905,6 +919,11 @@
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="speakerDesignationLabel" destination="mA0-aX-MoS" id="4Nn-56-Cs9"/>
+                                                    <outlet property="speakerImageLabel" destination="SwN-fF-6XC" id="KNG-2V-H2R"/>
+                                                    <outlet property="speakerNameLabel" destination="74z-ak-1Kc" id="IBU-Ad-DyW"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                         <userDefinedRuntimeAttributes>
@@ -943,7 +962,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="25W-UY-vsd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="J7w-FR-Qvz"/>
+                    <navigationItem key="navigationItem" id="J7w-FR-Qvz">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="refresh" id="8of-aj-NOJ">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="refresh:" destination="IdS-fO-sWl" id="XR7-Bj-Zlm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="speakersCollectionView" destination="bFv-Yu-4UM" id="Qo6-xZ-dzJ"/>
                     </connections>
@@ -961,7 +987,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
@@ -1088,15 +1114,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AbhijithN" width="450" height="450"/>
         <image name="IEEELogo" width="1889" height="351"/>
         <image name="baseline_home_black_18pt_1x" width="18" height="18"/>
         <image name="baseline_person_black_18pt_1x" width="18" height="18"/>
         <image name="baseline_schedule_black_18pt_1x" width="18" height="18"/>
-        <image name="dr" width="500" height="300"/>
+        <image name="blank" width="1280" height="1280"/>
         <image name="eventologo" width="498" height="156"/>
         <image name="itcLogo" width="1067" height="315"/>
         <image name="mesh" width="375" height="667"/>
+        <image name="refresh" width="33" height="33"/>
         <image name="speakers" width="16" height="16"/>
         <image name="tick" width="208" height="170"/>
     </resources>

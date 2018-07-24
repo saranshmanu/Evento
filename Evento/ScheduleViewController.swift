@@ -9,13 +9,20 @@ import UIKit
 
 class ScheduleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var schedule = [NSDictionary]()
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return schedule.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = timelineTableView.dequeueReusableCell(withIdentifier: "timeline", for: indexPath) as! TimelineTableViewCell
-        timelineTableView.cellForRow(at: indexPath as IndexPath)?.accessoryType = .checkmark
+        if schedule != nil{
+            let flag = schedule[indexPath.row] as! NSDictionary
+            cell.title.text = flag["name"] as! String
+            cell.time.text = flag["startTime"] as! String
+            cell.date.text = flag["date"] as! String
+        }
         return cell
     }
     
@@ -26,6 +33,18 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
     }
     
+    @IBAction func refresh(_ sender: Any) {
+        networkEngine.getSession {
+            if session.count != 0{
+                let a = session
+                let b = a["event"] as! NSDictionary
+                let c = b["eventSessions"] as! [NSDictionary]
+                self.schedule = c
+                self.timelineTableView.reloadData()
+                print("timeline reloaded")
+            }
+        }
+    }
     @IBOutlet weak var timelineTableView: UITableView!
     
     override func viewDidLoad() {
@@ -36,18 +55,15 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        if session.count != 0{
+            let a = session
+            let b = a["event"] as! NSDictionary
+            let c = b["eventSessions"] as! [NSDictionary]
+            schedule = c
+            timelineTableView.reloadData()
+        }
     }
-    */
-
 }

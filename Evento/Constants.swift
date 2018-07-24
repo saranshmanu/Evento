@@ -8,3 +8,13 @@
 
 import UIKit
 
+var session = NSDictionary()
+var speakersImages = [String:UIImage]()
+var speakersImageURL = [String]()
+var sponsorsImages = [String:UIImage]()
+var sponsorsImageURL = [String]()
+
+class constants {
+    public static let baseURL = "https://ieee-evento.herokuapp.com"
+    public static let event_id = "ieee_techloop_congress"
+}

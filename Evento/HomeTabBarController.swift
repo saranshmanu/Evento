@@ -52,15 +52,13 @@ class ScrollingTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioni
 
 class HomeTabBarController: UITabBarController {
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     let del = ScrollingTabBarControllerDelegate()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.delegate = del
+        networkEngine.getSession {
+        }
 //        if Data.isLogged == true{
 //            network.loadData()
 //        } else {
