@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class LoginViewController: UIViewController,UITextFieldDelegate {
+class LoginViewController: UIViewController {
 
     @IBAction func loginAction(_ sender: Any) {
         disableControls()
@@ -85,6 +85,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var usernameTextField: UITextField!
+    
     @IBAction func closeAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

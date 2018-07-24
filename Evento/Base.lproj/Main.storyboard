@@ -757,7 +757,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hQq-3x-Hnm">
                                 <rect key="frame" x="20" y="20" width="374" height="340"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DTL-8D-Zmm">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DTL-8D-Zmm">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -767,28 +767,28 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAE-gr-EO8">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAE-gr-EO8">
                                         <rect key="frame" x="0.0" y="70" width="374" height="60"/>
                                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HaE-OG-Y4H">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HaE-OG-Y4H">
                                         <rect key="frame" x="0.0" y="140" width="374" height="60"/>
                                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBS-VY-jCe">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBS-VY-jCe">
                                         <rect key="frame" x="0.0" y="210" width="374" height="60"/>
                                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="contact" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bf2-e3-Fys">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="contact" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bf2-e3-Fys">
                                         <rect key="frame" x="0.0" y="280" width="374" height="60"/>
                                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -809,18 +809,35 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerAction:" destination="5eb-LC-CF5" eventType="touchUpInside" id="MLT-g2-7yo"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="oiF-ud-Pd0">
+                                <rect key="frame" x="197" y="388" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="AmY-L6-bZj" firstAttribute="centerX" secondItem="iOH-qJ-QD4" secondAttribute="centerX" id="D0c-SU-JVR"/>
                             <constraint firstItem="hQq-3x-Hnm" firstAttribute="leading" secondItem="iOH-qJ-QD4" secondAttribute="leading" constant="20" id="LwC-d6-eEQ"/>
                             <constraint firstItem="iOH-qJ-QD4" firstAttribute="trailing" secondItem="hQq-3x-Hnm" secondAttribute="trailing" constant="20" id="OIa-Im-rfK"/>
+                            <constraint firstItem="oiF-ud-Pd0" firstAttribute="centerX" secondItem="iOH-qJ-QD4" secondAttribute="centerX" id="Oab-hF-Owb"/>
                             <constraint firstItem="hQq-3x-Hnm" firstAttribute="top" secondItem="iOH-qJ-QD4" secondAttribute="top" constant="20" id="Zfg-3U-1bJ"/>
+                            <constraint firstItem="oiF-ud-Pd0" firstAttribute="top" secondItem="bf2-e3-Fys" secondAttribute="bottom" constant="28" id="tkK-Au-Jid"/>
                             <constraint firstItem="iOH-qJ-QD4" firstAttribute="bottom" secondItem="AmY-L6-bZj" secondAttribute="bottom" constant="50" id="vHs-En-Fzy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iOH-qJ-QD4"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="oiF-ud-Pd0" id="B7v-rD-8Fm"/>
+                        <outlet property="contactTextField" destination="bf2-e3-Fys" id="JF1-Sy-aUH"/>
+                        <outlet property="emailTextField" destination="DTL-8D-Zmm" id="se7-Dp-3Ch"/>
+                        <outlet property="nameTextField" destination="HaE-OG-Y4H" id="DhX-PL-byq"/>
+                        <outlet property="passwordTextField" destination="ZAE-gr-EO8" id="Z5Y-hE-GhT"/>
+                        <outlet property="registerButton" destination="AmY-L6-bZj" id="t6X-qR-0f5"/>
+                        <outlet property="usernameTextField" destination="LBS-VY-jCe" id="mL0-va-6ye"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vz-nF-Mcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
