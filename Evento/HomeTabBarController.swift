@@ -57,8 +57,6 @@ class HomeTabBarController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.delegate = del
-        networkEngine.getSession {
-        }
 //        if Data.isLogged == true{
 //            network.loadData()
 //        } else {

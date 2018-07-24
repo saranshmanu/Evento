@@ -68,4 +68,37 @@ class networkEngine {
             finished()
         }
     }
+    public static func getProfile(finished: @escaping () -> Void){
+        let route = "/user/verification"
+        var url = constants.baseURL + route
+        Alamofire.request(url, method: .post, parameters: ["event_id":constants.event_id], headers: ["x-access-token":token]).responseJSON{
+            response in if response.result.isSuccess {
+                if let a:NSDictionary = response.result.value! as! NSDictionary{
+                    if a != nil {
+                        qrcode = a["encrypted_id"] as! String
+                    }
+                }
+            }
+            finished()
+        }
+    }
+    
+    public static func getUserDetails(finished: @escaping () -> Void){
+        let route = "/user/fetch/personal-info"
+        var url = constants.baseURL + route
+        Alamofire.request(url, method: .get, headers: ["x-access-token":token]).responseJSON{
+            response in if response.result.isSuccess {
+                if let a:NSDictionary = response.result.value! as! NSDictionary{
+                    if a != nil {
+                        if let b:NSDictionary = a["user"] as! NSDictionary{
+                            if b != nil{
+                                name = b["name"] as! String
+                            }
+                        }
+                    }
+                }
+            }
+            finished()
+        }
+    }
 }

@@ -7,19 +7,21 @@
 //
 
 import UIKit
+import Alamofire
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
+    @IBOutlet weak var statusPage: UIView!
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0{
             let cell = profileTableView.dequeueReusableCell(withIdentifier: "profileHeading", for: indexPath)
             return cell
         } else if indexPath.row == 1{
-            var code = "String(describing: address)"
-            let imageQR = displayQRCode(code: code)
+            let imageQR = displayQRCode(code: qrcode)
             let cell = profileTableView.dequeueReusableCell(withIdentifier: "profile", for: indexPath) as! BarcodeTableViewCell
             let scaleX = cell.barcodeImage.frame.size.width / imageQR.extent.size.width
             let scaleY = cell.barcodeImage.frame.size.height / imageQR.extent.size.height
@@ -30,6 +32,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.backView.layer.shadowOpacity = 1
             cell.backView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
             cell.backView.layer.shadowRadius = 9
+            cell.nameTextLabel.text = name
             return cell
         } else if indexPath.row == 2{
             let cell = profileTableView.dequeueReusableCell(withIdentifier: "wifiHeading", for: indexPath)
@@ -57,6 +60,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 
     @IBOutlet weak var profileTableView: UITableView!
     @IBAction func closeAction(_ sender: Any) {
+        token = ""
+        isLogged = false
         dismiss(animated: true, completion: nil)
     }
     
@@ -72,6 +77,17 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         colorFilter?.setValue(CIColor(red: 0, green: 0, blue: 0, alpha: 1), forKey: "inputColor0") // Foreground or the barcode RED
         qrcodeImage = colorFilter?.outputImage
         return qrcodeImage
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if isLogged == true {
+            statusPage.isHidden = true
+            profileTableView.reloadData()
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "authentication")
+            self.present(controller, animated: true, completion: nil)
+        }
     }
     
     override func viewDidLoad() {

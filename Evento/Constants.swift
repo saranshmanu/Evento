@@ -13,6 +13,10 @@ var speakersImages = [String:UIImage]()
 var speakersImageURL = [String]()
 var sponsorsImages = [String:UIImage]()
 var sponsorsImageURL = [String]()
+var isLogged:Bool = false
+var token = ""
+var qrcode = ""
+var name = ""
 
 class constants {
     public static let baseURL = "https://ieee-evento.herokuapp.com"

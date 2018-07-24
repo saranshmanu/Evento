@@ -10,6 +10,8 @@ import UIKit
 import AVFoundation
 
 class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
+    
+    var eventIsLoading = false
 
     @IBOutlet weak var previewView: UIView!
     override func viewDidAppear(_ animated: Bool) {
@@ -65,15 +67,31 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         present(readerVC, animated: true, completion: nil)
     }
     
+    @IBOutlet weak var loader: UIView!
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if eventIsLoading == true {
+            scrollView.isScrollEnabled = false
+       }
+    }
+    
     @IBAction func scanInPreviewAction(_ sender: Any) {
         guard checkScanPermissions(), !reader.isRunning else { return }
         reader.previewLayer.frame = previewView.bounds
         previewView.layer.addSublayer(reader.previewLayer)
         reader.startScanning()
         reader.didFindCode = { result in
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "homeTabBar")
-            self.present(controller, animated: true, completion: nil)
+            self.loader.isHidden = false
+            self.loader.alpha = 1.0
+            self.eventIsLoading = true
+            networkEngine.getSession {
+                self.loader.isHidden = true
+                self.loader.alpha = 0.0
+                self.eventIsLoading = false
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "homeTabBar")
+                self.present(controller, animated: true, completion: nil)
+            }
         }
     }
     
