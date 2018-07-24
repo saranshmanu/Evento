@@ -94,6 +94,23 @@ class networkEngine {
                             if b != nil{
                                 name = b["name"] as! String
                                 userID = b["_id"] as! String
+                                var check = 0
+                                if let wifiDetails:[NSDictionary] = b["wifiCouponHistory"] as! [NSDictionary]{
+                                    if wifiDetails != nil && wifiDetails.count != 0{
+                                        for i in wifiDetails{
+                                            if i["event_id"] as! String == constants.event_id{
+                                                wifiUser = i["coupon_id"] as! String
+                                                wifiPassword = i["coupon_password"] as! String
+                                                check = 1
+                                                break
+                                            }
+                                        }
+                                    }
+                                }
+                                if check == 0{
+                                    wifiUser = "Not available"
+                                    wifiPassword = "Not available"
+                                }
                             }
                         }
                     }

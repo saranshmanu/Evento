@@ -45,6 +45,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.cardView.layer.shadowOpacity = 1
             cell.cardView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
             cell.cardView.layer.shadowRadius = 9
+            cell.usernameTextLabel.text = wifiUser
+            cell.passwordTextLabel.text = wifiPassword
             return cell
         } else if indexPath.row == 4{
             let cell = profileTableView.dequeueReusableCell(withIdentifier: "scannedHeading", for: indexPath)

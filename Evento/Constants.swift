@@ -18,6 +18,8 @@ var token = ""
 var qrcode = ""
 var name = ""
 var userID = ""
+var wifiUser = ""
+var wifiPassword = ""
 
 class constants {
     public static let baseURL = "https://ieee-evento.herokuapp.com"
