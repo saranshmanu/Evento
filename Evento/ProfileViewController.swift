@@ -62,7 +62,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.dateLabel.text = flag["date"] as! String
             cell.timeLabel.text = flag["startTime"] as! String
             let participants = flag["participantsPresent"] as! [String]
-            print(participants, userID)
             if participants.contains(userID) {
                 cell.tick.isHidden = false
             } else {
@@ -72,7 +71,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-
     @IBOutlet weak var profileTableView: UITableView!
     @IBAction func closeAction(_ sender: Any) {
         token = ""

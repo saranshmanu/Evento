@@ -23,5 +23,5 @@ var wifiPassword = ""
 
 class constants {
     public static let baseURL = "https://ieee-evento.herokuapp.com"
-    public static let event_id = "ieee_techloop_congress"
+    public static var event_id = "ieee_techloop_congress"
 }

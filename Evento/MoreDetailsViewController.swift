@@ -23,7 +23,7 @@ class MoreDetailsViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     @IBAction func refresh(_ sender: Any) {
-        networkEngine.getSession {
+        networkEngine.getSession {_ in 
             if session.count != 0{
                 let a = session
                 let b = a["event"] as! NSDictionary

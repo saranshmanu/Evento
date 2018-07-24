@@ -29,7 +29,7 @@ class networkEngine {
         }
     }
     
-    public static func getSession(finished: @escaping () -> Void){
+    public static func getSession(finished: @escaping (_ success:Bool) -> Void){
         let route = "/event/fetch/info"
         var url = constants.baseURL + route
         Alamofire.request(url, method: .post, parameters: ["event_id":constants.event_id]).responseJSON{
@@ -62,10 +62,11 @@ class networkEngine {
                             fetchImageSponsors(url: i) {
                             }
                         }
+                        finished(true)
                     }
                 }
             }
-            finished()
+            finished(false)
         }
     }
     public static func getProfile(finished: @escaping () -> Void){
