@@ -73,7 +73,7 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         }
         return QRCodeReaderViewController(builder: builder)
     }()
-    
+
     private func checkScanPermissions() -> Bool {
         do {
             return try QRCodeReader.supportsMetadataObjectTypes()
@@ -101,7 +101,7 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
             return false
         }
     }
-    
+
     @IBAction func scanInModalAction(_ sender: AnyObject) {
         guard checkScanPermissions() else { return }
         readerVC.modalPresentationStyle = .formSheet
@@ -151,24 +151,11 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
                     self.present(alert, animated: true, completion: nil)
                     self.reader.startScanning()
                 }
-                
+
             }
-//            self.loader.isHidden = false
-//            self.loader.alpha = 1.0
-//            self.eventIsLoading = true
-//            networkEngine.getSession {
-//                self.loader.isHidden = true
-//                self.loader.alpha = 0.0
-//                self.eventIsLoading = false
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let controller = storyboard.instantiateViewController(withIdentifier: "homeTabBar")
-//                self.present(controller, animated: true, completion: nil)
-//            }
         }
     }
-    
-    // MARK: - QRCodeReader Delegate Methods
-    
+
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         reader.stopScanning()
         dismiss(animated: true) { [weak self] in
@@ -181,13 +168,13 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
             self?.present(alert, animated: true, completion: nil)
         }
     }
-    
+
     func reader(_ reader: QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVCaptureDeviceInput) {
         if let cameraName = newCaptureDevice.device.localizedName {
             print("Switching capturing to: \(cameraName)")
         }
     }
-    
+
     func readerDidCancel(_ reader: QRCodeReaderViewController) {
         reader.stopScanning()
         dismiss(animated: true, completion: nil)

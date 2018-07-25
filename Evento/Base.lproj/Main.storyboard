@@ -240,7 +240,7 @@
                     <connections>
                         <outlet property="event_id" destination="rUd-WY-ODK" id="niR-Nv-twZ"/>
                         <outlet property="loader" destination="ObQ-33-2iT" id="XOC-SJ-7FJ"/>
-                        <outlet property="previewView" destination="Jgs-do-hIB" id="JdI-pb-12V"/>
+                        <outlet property="previewView" destination="Jgs-do-hIB" id="ZIc-Sf-YLy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LxW-Y9-Noa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -275,7 +275,7 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeline" rowHeight="113" id="HbK-um-Iln" customClass="TimelineTableViewCell" customModule="Evento" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeline" rowHeight="113" id="HbK-um-Iln" customClass="TimelineTableViewCell" customModule="Evento" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="350" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HbK-um-Iln" id="H3m-Kl-H2Y">
@@ -371,7 +371,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileHeading" rowHeight="69" id="LmH-Qc-Sqw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileHeading" rowHeight="69" id="LmH-Qc-Sqw">
                                         <rect key="frame" x="0.0" y="28" width="375" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LmH-Qc-Sqw" id="3f7-M3-DR3">
@@ -393,7 +393,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profile" rowHeight="245" id="HIR-uO-lIg" customClass="BarcodeTableViewCell" customModule="Evento" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profile" rowHeight="245" id="HIR-uO-lIg" customClass="BarcodeTableViewCell" customModule="Evento" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="97" width="375" height="245"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HIR-uO-lIg" id="AAz-UQ-4SG">
@@ -455,7 +455,7 @@
                                             <outlet property="nameTextLabel" destination="cXh-rl-DC0" id="bnQ-Vg-LBC"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wifiHeading" rowHeight="69" id="yDC-gg-Jj5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wifiHeading" rowHeight="69" id="yDC-gg-Jj5">
                                         <rect key="frame" x="0.0" y="342" width="375" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yDC-gg-Jj5" id="Xyn-K4-Gfd">
@@ -477,7 +477,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wifiCredentials" rowHeight="90" id="Cpt-st-nDV" customClass="WifiCredentialsTableViewCell" customModule="Evento" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wifiCredentials" rowHeight="90" id="Cpt-st-nDV" customClass="WifiCredentialsTableViewCell" customModule="Evento" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="411" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cpt-st-nDV" id="lNC-ZO-yQd">
@@ -560,7 +560,7 @@
                                             <outlet property="usernameTextLabel" destination="6uB-en-bXB" id="fzD-uV-HRH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scannedHeading" rowHeight="69" id="hu0-J6-a6x">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scannedHeading" rowHeight="69" id="hu0-J6-a6x">
                                         <rect key="frame" x="0.0" y="501" width="375" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hu0-J6-a6x" id="26c-l4-jGZ">
@@ -582,7 +582,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="food" rowHeight="137" id="jID-PN-R6Y" customClass="ScannedFoodTableViewCell" customModule="Evento" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="food" rowHeight="137" id="jID-PN-R6Y" customClass="ScannedFoodTableViewCell" customModule="Evento" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="570" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jID-PN-R6Y" id="wAa-L6-13D">
@@ -590,7 +590,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iy-54-TGS">
-                                                    <rect key="frame" x="30" y="0.0" width="708" height="129"/>
+                                                    <rect key="frame" x="30" y="0.0" width="315" height="129"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yJv-uK-xrs">
                                                             <rect key="frame" x="25" y="23" width="89" height="83"/>
@@ -616,7 +616,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="Y7L-cb-wKF">
-                                                            <rect key="frame" x="653" y="50" width="30" height="30"/>
+                                                            <rect key="frame" x="260" y="50" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Y7L-cb-wKF" secondAttribute="height" multiplier="1:1" id="2KM-zR-xya"/>
                                                                 <constraint firstAttribute="height" constant="30" id="OSs-3K-Dht"/>
