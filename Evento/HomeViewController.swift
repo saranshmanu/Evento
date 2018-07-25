@@ -51,8 +51,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                         if let a:UIImage = sponsorsImages[url] as! UIImage {
                             cell.sponsorImageView.image = a
                         } else {
+                            cell.sponsorImageView.image = UIImage.init(named: "white")
                         }
+                    } else {
+                        cell.sponsorImageView.image = UIImage.init(named: "white")
                     }
+                } else {
+                    cell.sponsorImageView.image = UIImage.init(named: "white")
                 }
             }
         }

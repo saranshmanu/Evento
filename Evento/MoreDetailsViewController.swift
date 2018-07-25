@@ -52,6 +52,8 @@ class MoreDetailsViewController: UIViewController, UICollectionViewDataSource, U
                 } else {
                     cell.speakerImageLabel.image = UIImage.init(named: "blank")
                 }
+            } else {
+                cell.speakerImageLabel.image = UIImage.init(named: "blank")
             }
         }
         return cell

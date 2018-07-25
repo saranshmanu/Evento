@@ -13,10 +13,10 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     
     override func viewDidLoad() {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(QRViewController.dismissKeyboard)))
-        event_id.layer.cornerRadius = event_id.frame.height/2
+        event_id.layer.cornerRadius = 5
         event_id.attributedPlaceholder = NSAttributedString(string: event_id.placeholder!, attributes: [NSForegroundColorAttributeName : UIColor.white])
         event_id.backgroundColor = UIColor.clear
-        event_id.layer.borderWidth = 2
+        event_id.layer.borderWidth = 1
         event_id.layer.borderColor = UIColor.white.cgColor
     }
     
