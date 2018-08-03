@@ -151,7 +151,6 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
                     self.present(alert, animated: true, completion: nil)
                     self.reader.startScanning()
                 }
-
             }
         }
     }

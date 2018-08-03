@@ -8,6 +8,8 @@ target 'Evento' do
   # Pods for Events
 pod 'Alamofire', '~> 4.4'
 pod 'AlamofireImage', '~> 3.3'
+pod 'Firebase/Core'
+pod 'Firebase/Messaging'
   target 'EventoTests' do
     inherit! :search_paths
     # Pods for testing

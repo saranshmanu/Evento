@@ -16,6 +16,7 @@
 		95762F6621035E1300309296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95762F6421035E1300309296 /* LaunchScreen.storyboard */; };
 		95762F7121035E1400309296 /* EventoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95762F7021035E1400309296 /* EventoTests.swift */; };
 		95762F7C21035E1400309296 /* EventoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95762F7B21035E1400309296 /* EventoUITests.swift */; };
+		95839D042114C83D00618377 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95839D032114C83D00618377 /* GoogleService-Info.plist */; };
 		95A073D121061F2D003275CD /* WifiCredentialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A073D021061F2D003275CD /* WifiCredentialsTableViewCell.swift */; };
 		95A073D321063F88003275CD /* BarcodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A073D221063F88003275CD /* BarcodeTableViewCell.swift */; };
 		95A073D5210650E3003275CD /* ScannedFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A073D4210650E3003275CD /* ScannedFoodTableViewCell.swift */; };
@@ -82,6 +83,8 @@
 		95762F7721035E1400309296 /* EventoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95762F7B21035E1400309296 /* EventoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoUITests.swift; sourceTree = "<group>"; };
 		95762F7D21035E1400309296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95839CFE2114BA6D00618377 /* Evento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Evento.entitlements; sourceTree = "<group>"; };
+		95839D032114C83D00618377 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95A073D021061F2D003275CD /* WifiCredentialsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiCredentialsTableViewCell.swift; sourceTree = "<group>"; };
 		95A073D221063F88003275CD /* BarcodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeTableViewCell.swift; sourceTree = "<group>"; };
 		95A073D4210650E3003275CD /* ScannedFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedFoodTableViewCell.swift; sourceTree = "<group>"; };
@@ -179,11 +182,13 @@
 		95762F5A21035E1300309296 /* Evento */ = {
 			isa = PBXGroup;
 			children = (
+				95839CFE2114BA6D00618377 /* Evento.entitlements */,
 				95ADA392210364DE00C4E2D3 /* QR Scanner */,
 				95ADA38E210360A200C4E2D3 /* RegisterViewController.swift */,
 				95762F5B21035E1300309296 /* AppDelegate.swift */,
 				95762F5F21035E1300309296 /* Main.storyboard */,
 				95762F6221035E1300309296 /* Assets.xcassets */,
+				95839D032114C83D00618377 /* GoogleService-Info.plist */,
 				95762F6421035E1300309296 /* LaunchScreen.storyboard */,
 				95762F6721035E1300309296 /* Info.plist */,
 				95ADA38C2103609500C4E2D3 /* LoginViewController.swift */,
@@ -329,6 +334,11 @@
 					95762F5721035E1300309296 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					95762F6B21035E1400309296 = {
 						CreatedOnToolsVersion = 9.2;
@@ -368,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95762F6621035E1300309296 /* LaunchScreen.storyboard in Resources */,
+				95839D042114C83D00618377 /* GoogleService-Info.plist in Resources */,
 				95762F6321035E1300309296 /* Assets.xcassets in Resources */,
 				95762F6121035E1300309296 /* Main.storyboard in Resources */,
 			);
@@ -510,11 +521,17 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Evento/Pods-Evento-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -740,6 +757,7 @@
 			baseConfigurationReference = 991050C810D801B95AEC6225 /* Pods-Evento.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Evento/Evento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JCRFV5ZL52;
 				INFOPLIST_FILE = Evento/Info.plist;
@@ -757,6 +775,7 @@
 			baseConfigurationReference = BDDF952211BB210EF51799C2 /* Pods-Evento.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Evento/Evento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JCRFV5ZL52;
 				INFOPLIST_FILE = Evento/Info.plist;
