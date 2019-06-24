@@ -10,18 +10,6 @@ import UIKit
 
 class KeynoteSpeakersViewController: UIViewController {
     
-    var speakers = [NSDictionary]()
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if session.count != 0{
-            let a = session
-            let b = a["event"] as! NSDictionary
-            let c = b["speakers"] as! [NSDictionary]
-            speakers = c
-            speakersCollectionView.reloadData()
-        }
-    }
-    
     @IBAction func refresh(_ sender: Any) {
         NetworkEngine.getSession {_ in 
             if session.count != 0{
@@ -35,6 +23,17 @@ class KeynoteSpeakersViewController: UIViewController {
     }
     
     @IBOutlet weak var speakersCollectionView: UICollectionView!
+    var speakers = [NSDictionary]()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if session.count != 0{
+            let a = session
+            let b = a["event"] as! NSDictionary
+            let c = b["speakers"] as! [NSDictionary]
+            speakers = c
+            speakersCollectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

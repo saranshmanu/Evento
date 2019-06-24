@@ -78,7 +78,8 @@ class NetworkEngine {
         Alamofire.request(url, method: .post, parameters: params).responseJSON{
             response in if response.result.isSuccess{
                 let a = response.result.value! as! NSDictionary
-                if a["success"] as! Int == 1{
+                print(a)
+                if a["success"] as! Bool == true{
                     token = a["token"] as! String
                     completion(true)
                 } else {
@@ -100,8 +101,8 @@ class NetworkEngine {
             "username":username,
             "contact":phoneNumber
         ]
-        Alamofire.request(url, method: .post, parameters: params).responseJSON{
-            response in if response.result.isSuccess {
+        Alamofire.request(url, method: .post, parameters: params).responseJSON{ response in
+            if response.result.isSuccess {
                 if let a:NSDictionary = response.result.value! as? NSDictionary{
                     if a["success"] as! Bool == true {
                         completion(true)
@@ -121,8 +122,8 @@ class NetworkEngine {
         let params = [
             "event_id":constants.event_id
         ]
-        Alamofire.request(url, method: .post, parameters: params).responseJSON {
-            response in if response.result.isSuccess {
+        Alamofire.request(url, method: .post, parameters: params).responseJSON { response in
+            if response.result.isSuccess {
                 if let a:NSDictionary = response.result.value! as? NSDictionary {
                     if a["success"] as! Bool == true {
                         session = a
@@ -167,8 +168,8 @@ class NetworkEngine {
         let head = [
             "x-access-token":token
         ]
-        Alamofire.request(url, method: .post, parameters: params, headers: head).responseJSON{
-            response in if response.result.isSuccess {
+        Alamofire.request(url, method: .post, parameters: params, headers: head).responseJSON{ response in
+            if response.result.isSuccess {
                 if let a:NSDictionary = response.result.value! as? NSDictionary{
                     qrcode = a["encrypted_id"] as! String
                 }
@@ -183,8 +184,8 @@ class NetworkEngine {
         let head = [
             "x-access-token":token
         ]
-        Alamofire.request(url, method: .get, headers: head).responseJSON{
-            response in if response.result.isSuccess {
+        Alamofire.request(url, method: .get, headers: head).responseJSON { response in
+            if response.result.isSuccess {
                 if let a:NSDictionary = response.result.value! as? NSDictionary {
                     if let b:NSDictionary = a["user"] as? NSDictionary {
                         name = b["name"] as! String
@@ -200,7 +201,7 @@ class NetworkEngine {
                                 }
                             }
                         }
-                        if check == 0{
+                        if check == 0 {
                             wifiUser = "Not available"
                             wifiPassword = "Not available"
                         }

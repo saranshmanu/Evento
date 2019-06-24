@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class QRViewController: UIViewController {
     
     @IBAction func continueAction(_ sender: Any) {
         dismissKeyboard()
@@ -22,28 +22,34 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var loader: UIView!
     @IBOutlet weak var event_id: UITextField!
+    
     var eventIsLoading = false
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
-    func forward() {
-        let EVENT_ID = event_id.text!
-        constants.event_id = EVENT_ID
+    func enableControls() {
+        self.loader.isHidden = true
+        self.loader.alpha = 0.0
+        self.eventIsLoading = false
+    }
+    
+    func disableControls() {
         self.loader.isHidden = false
         self.loader.alpha = 1.0
         self.eventIsLoading = true
-        NetworkEngine.getSession {success in
-            if success == true{
-                self.loader.isHidden = true
-                self.loader.alpha = 0.0
-                self.eventIsLoading = false
+    }
+    
+    func forward() {
+        let eventCode = event_id.text!
+        constants.event_id = eventCode
+        self.disableControls()
+        NetworkEngine.getSession { success in
+            self.enableControls()
+            if success == true {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let controller = storyboard.instantiateViewController(withIdentifier: "homeTabBar")
                 self.present(controller, animated: true, completion: nil)
             } else {
-                self.loader.isHidden = true
-                self.loader.alpha = 0.0
-                self.eventIsLoading = false
                 AlertView.show(title: "No such event found", message: "Try again!", viewController: self)
             }
         }
@@ -59,42 +65,22 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         }
     }
     
-    override func viewDidLoad() {
+    func initTextBoxView(textField: UITextField) {
+        textField.layer.cornerRadius = 5
+        textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+        textField.backgroundColor = UIColor.clear
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    func initTapGestureForKeyboardDismiss() {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(QRViewController.dismissKeyboard)))
-        event_id.layer.cornerRadius = 5
-        event_id.attributedPlaceholder = NSAttributedString(string: event_id.placeholder!, attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
-        event_id.backgroundColor = UIColor.clear
-        event_id.layer.borderWidth = 1
-        event_id.layer.borderColor = UIColor.white.cgColor
-        
-        captureSession = AVCaptureSession()
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
-        let videoInput: AVCaptureDeviceInput
-        do {
-            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
-        } catch {
-            return
-        }
-        if (captureSession.canAddInput(videoInput)) {
-            captureSession.addInput(videoInput)
-        } else {
-            AlertView.show(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", viewController: self)
-            return
-        }
-        let metadataOutput = AVCaptureMetadataOutput()
-        if (captureSession.canAddOutput(metadataOutput)) {
-            captureSession.addOutput(metadataOutput)
-            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metadataOutput.metadataObjectTypes = [.qr]
-        } else {
-            AlertView.show(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", viewController: self)
-            return
-        }
-        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = view.layer.bounds
-        previewLayer.videoGravity = .resizeAspectFill
-        previewView.layer.addSublayer(previewLayer)
-        captureSession.startRunning()
+    }
+    
+    override func viewDidLoad() {
+        initTapGestureForKeyboardDismiss()
+        initTextBoxView(textField: event_id)
+        initCameraSession()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,6 +95,43 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         if (captureSession?.isRunning == true) {
             captureSession.stopRunning()
         }
+    }
+}
+
+extension QRViewController: AVCaptureMetadataOutputObjectsDelegate {
+    
+    func initCameraSession() {
+        captureSession = AVCaptureSession()
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+        
+        let videoInput: AVCaptureDeviceInput
+        do {
+            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+        } catch {
+            return
+        }
+        if (captureSession.canAddInput(videoInput)) {
+            captureSession.addInput(videoInput)
+        } else {
+            AlertView.show(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", viewController: self)
+            return
+        }
+        
+        let metadataOutput = AVCaptureMetadataOutput()
+        if (captureSession.canAddOutput(metadataOutput)) {
+            captureSession.addOutput(metadataOutput)
+            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            metadataOutput.metadataObjectTypes = [.qr]
+        } else {
+            AlertView.show(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", viewController: self)
+            return
+        }
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.frame = view.layer.bounds
+        previewLayer.videoGravity = .resizeAspectFill
+        previewView.layer.addSublayer(previewLayer)
+        captureSession.startRunning()
     }
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {

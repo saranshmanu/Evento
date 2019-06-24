@@ -35,7 +35,7 @@ class ScanCodePageViewController: UIPageViewController {
     }
 }
 
-extension ScanCodePageViewController: UIPageViewControllerDataSource {
+extension ScanCodePageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = pages.index(of: viewController) else { return nil }
         let previousIndex = viewControllerIndex - 1
@@ -51,5 +51,3 @@ extension ScanCodePageViewController: UIPageViewControllerDataSource {
         return pages[nextIndex]
     }
 }
-
-extension ScanCodePageViewController: UIPageViewControllerDelegate { }

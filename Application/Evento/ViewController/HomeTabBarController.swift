@@ -55,7 +55,6 @@ class HomeTabBarController: UITabBarController {
     let del = ScrollingTabBarControllerDelegate()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         self.delegate = del
     }
 

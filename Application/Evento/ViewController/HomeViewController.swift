@@ -10,6 +10,19 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBAction func refresh(_ sender: Any) {
+        NetworkEngine.getSession {_ in
+            if session.count != 0{
+                let a = session
+                let b = a["event"] as! NSDictionary
+                let c = b["sponsors"] as! [NSDictionary]
+                self.sponsors = c
+                self.sponsorsCollectionView.reloadData()
+            }
+        }
+    }
+    
+    @IBOutlet weak var sponsorsCollectionView: UICollectionView!
     var sponsors = [NSDictionary]()
     
     override func viewDidAppear(_ animated: Bool) {
@@ -21,21 +34,6 @@ class HomeViewController: UIViewController {
             sponsorsCollectionView.reloadData()
         }
     }
-    
-    @IBAction func refresh(_ sender: Any) {
-        NetworkEngine.getSession {_ in
-            if session.count != 0{
-                let a = session
-                let b = a["event"] as! NSDictionary
-                let c = b["sponsors"] as! [NSDictionary]
-                self.sponsors = c
-                self.sponsorsCollectionView.reloadData()
-                print("sponsors reloaded")
-            }
-        }
-    }
-    
-    @IBOutlet weak var sponsorsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,13 +58,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sponsors", for: indexPath) as! SponsorsCollectionViewCell
-        let flag = sponsors[indexPath.row] as! NSDictionary
-        cell.sponsorTextLabel.text = flag["name"] as! String
+        let flag = sponsors[indexPath.row]
+        cell.sponsorTextLabel.text = flag["name"] as? String
         if flag["img_url"] != nil {
             let url = flag["img_url"] as! String
             if sponsorsImages[url] != nil{
-                if let a:UIImage = sponsorsImages[url] as! UIImage {
-                    cell.sponsorImageView.image = a
+                if let image: UIImage = sponsorsImages[url] {
+                    cell.sponsorImageView.image = image
                 } else {
                     cell.sponsorImageView.image = UIImage.init(named: "white")
                 }

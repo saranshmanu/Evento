@@ -9,69 +9,12 @@
 import UIKit
 import Alamofire
 
-class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProfileViewController: UIViewController {
     
-    var mealsSchedule = [NSDictionary]()
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5 + mealsSchedule.count
-    }
     @IBOutlet weak var statusPage: UIView!
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "profileHeading", for: indexPath)
-            return cell
-        } else if indexPath.row == 1 {
-            let imageQR = displayQRCode(code: qrcode)
-            let cell = tableView.dequeueReusableCell(withIdentifier: "profile", for: indexPath) as! BarcodeTableViewCell
-            let scaleX = cell.barcodeImage.frame.size.width / imageQR.extent.size.width
-            let scaleY = cell.barcodeImage.frame.size.height / imageQR.extent.size.height
-            let transformedImage = imageQR.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
-            cell.barcodeImage.image = UIImage(ciImage: transformedImage)
-            cell.barcodeImage.contentMode = .scaleAspectFit
-            cell.backView.layer.shadowColor = UIColor.black.cgColor
-            cell.backView.layer.shadowOpacity = 1
-            cell.backView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
-            cell.backView.layer.shadowRadius = 9
-            cell.nameTextLabel.text = name
-            return cell
-        } else if indexPath.row == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "wifiHeading", for: indexPath)
-            return cell
-        } else if indexPath.row == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "wifiCredentials", for: indexPath) as! WifiCredentialsTableViewCell
-            cell.cardView.layer.shadowColor = UIColor.black.cgColor
-            cell.cardView.layer.shadowOpacity = 1
-            cell.cardView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
-            cell.cardView.layer.shadowRadius = 9
-            cell.usernameTextLabel.text = wifiUser
-            cell.passwordTextLabel.text = wifiPassword
-            return cell
-        } else if indexPath.row == 4 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "scannedHeading", for: indexPath)
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath) as! ScannedFoodTableViewCell
-            cell.cardView.layer.shadowColor = UIColor.black.cgColor
-            cell.cardView.layer.shadowOpacity = 1
-            cell.cardView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
-            cell.cardView.layer.shadowRadius = 9
-            let flag = mealsSchedule[indexPath.row - 5]
-            cell.nameLabel.text = flag["name"] as? String
-            cell.dateLabel.text = flag["date"] as? String
-            cell.timeLabel.text = flag["startTime"] as? String
-            let participants = flag["participantsPresent"] as! [String]
-            if participants.contains(userID) {
-                cell.tick.isHidden = false
-            } else {
-                cell.tick.isHidden = true
-            }
-            return cell
-        }
-    }
-    
     @IBOutlet weak var profileTableView: UITableView!
+    var mealSchedule = [NSDictionary]()
+    
     @IBAction func closeAction(_ sender: Any) {
         token = ""
         isLogged = false
@@ -96,13 +39,13 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         if isLogged == true {
             statusPage.isHidden = true
             if session.count != 0{
-                mealsSchedule.removeAll()
+                mealSchedule.removeAll()
                 let a = session
                 let b = a["event"] as! NSDictionary
                 let c = b["eventSessions"] as! [NSDictionary]
                 for i in c{
                     if i["sessionType"] as! String == "Meal" {
-                        mealsSchedule.append(i)
+                        mealSchedule.append(i)
                     }
                 }
                 profileTableView.reloadData()
@@ -116,11 +59,85 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileTableView.delegate = self
-        profileTableView.dataSource = self
+        initTableView()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func initTableView() {
+        profileTableView.delegate = self
+        profileTableView.dataSource = self
+    }
+    
+    func getProfileCell(index: IndexPath, tableView: UITableView) -> BarcodeTableViewCell {
+        let imageQR = displayQRCode(code: qrcode)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "profile", for: index) as! BarcodeTableViewCell
+        let scaleX = cell.barcodeImage.frame.size.width / imageQR.extent.size.width
+        let scaleY = cell.barcodeImage.frame.size.height / imageQR.extent.size.height
+        let transformedImage = imageQR.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
+        cell.barcodeImage.image = UIImage(ciImage: transformedImage)
+        cell.barcodeImage.contentMode = .scaleAspectFit
+        cell.backView.layer.shadowColor = UIColor.black.cgColor
+        cell.backView.layer.shadowOpacity = 1
+        cell.backView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
+        cell.backView.layer.shadowRadius = 9
+        cell.nameTextLabel.text = name
+        return cell
+    }
+    
+    func getWifiCredentialsCell(index: IndexPath, tableView: UITableView) -> WifiCredentialsTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "wifiCredentials", for: index) as! WifiCredentialsTableViewCell
+        cell.cardView.layer.shadowColor = UIColor.black.cgColor
+        cell.cardView.layer.shadowOpacity = 1
+        cell.cardView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
+        cell.cardView.layer.shadowRadius = 9
+        cell.usernameTextLabel.text = wifiUser
+        cell.passwordTextLabel.text = wifiPassword
+        return cell
+    }
+    
+    func getFoodCell(index: IndexPath, tableView: UITableView) -> ScannedFoodTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: index) as! ScannedFoodTableViewCell
+        cell.cardView.layer.shadowColor = UIColor.black.cgColor
+        cell.cardView.layer.shadowOpacity = 1
+        cell.cardView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
+        cell.cardView.layer.shadowRadius = 9
+        let flag = mealSchedule[index.row - 5]
+        cell.nameLabel.text = flag["name"] as? String
+        cell.dateLabel.text = flag["date"] as? String
+        cell.timeLabel.text = flag["startTime"] as? String
+        let participants = flag["participantsPresent"] as! [String]
+        if participants.contains(userID) {
+            cell.tick.isHidden = false
+        } else {
+            cell.tick.isHidden = true
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5 + mealSchedule.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0{
+            return tableView.dequeueReusableCell(withIdentifier: "profileHeading", for: indexPath)
+        } else if indexPath.row == 1 {
+            return getProfileCell(index: indexPath, tableView: tableView)
+        } else if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "wifiHeading", for: indexPath)
+            return cell
+        } else if indexPath.row == 3 {
+            return getWifiCredentialsCell(index: indexPath, tableView: tableView)
+        } else if indexPath.row == 4 {
+            return tableView.dequeueReusableCell(withIdentifier: "scannedHeading", for: indexPath)
+        } else {
+            return getFoodCell(index: indexPath, tableView: tableView)
+        }
     }
 }
