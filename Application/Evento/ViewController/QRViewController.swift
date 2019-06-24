@@ -13,10 +13,8 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     
     @IBAction func continueAction(_ sender: Any) {
         dismissKeyboard()
-        if event_id.text! == ""{
-            let alert = UIAlertController(title: "Field Empty!", message: "Enter the event ID", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        if event_id.text! == "" {
+            AlertView.show(title: "Field Empty!", message: "Enter the event ID", viewController: self)
         } else {
             forward()
         }
@@ -46,9 +44,7 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
                 self.loader.isHidden = true
                 self.loader.alpha = 0.0
                 self.eventIsLoading = false
-                let alert = UIAlertController(title: "No such event found", message: "Try again!", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                AlertView.show(title: "No such event found", message: "Try again!", viewController: self)
             }
         }
     }
@@ -82,7 +78,7 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         if (captureSession.canAddInput(videoInput)) {
             captureSession.addInput(videoInput)
         } else {
-            failed()
+            AlertView.show(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", viewController: self)
             return
         }
         let metadataOutput = AVCaptureMetadataOutput()
@@ -91,7 +87,7 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             metadataOutput.metadataObjectTypes = [.qr]
         } else {
-            failed()
+            AlertView.show(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", viewController: self)
             return
         }
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
@@ -99,13 +95,6 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         previewLayer.videoGravity = .resizeAspectFill
         previewView.layer.addSublayer(previewLayer)
         captureSession.startRunning()
-    }
-    
-    func failed() {
-        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
-        captureSession = nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -137,10 +126,6 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         event_id.text = code
         forward()
         captureSession.startRunning()
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

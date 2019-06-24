@@ -1,5 +1,5 @@
 //
-//  OnboardingViewController.swift
+//  ScanCodePageViewController.swift
 //  Evento
 //
 //  Created by Saransh Mittal on 21/07/18.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class OnboardingViewController: UIPageViewController {
+class ScanCodePageViewController: UIPageViewController {
     
     fileprivate lazy var pages: [UIViewController] = {
         return [
             self.getViewController(withIdentifier: "pageControllerOne"),
-//            self.getViewController(withIdentifier: "pageControllerTwo"),
-//            self.getViewController(withIdentifier: "pageControllerThree"),
             self.getViewController(withIdentifier: "qrCodeScanner")
         ]
     }()
@@ -37,30 +35,21 @@ class OnboardingViewController: UIPageViewController {
     }
 }
 
-extension OnboardingViewController: UIPageViewControllerDataSource {
+extension ScanCodePageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = pages.index(of: viewController) else { return nil }
         let previousIndex = viewControllerIndex - 1
-        guard previousIndex >= 0
-            else {
-                return nil
-        }
-        guard pages.count > previousIndex
-            else {
-                return nil
-        }
+        guard previousIndex >= 0 else { return nil  }
+        guard pages.count > previousIndex else { return nil }
         return pages[previousIndex]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = pages.index(of: viewController) else { return nil }
         let nextIndex = viewControllerIndex + 1
-        guard pages.count > nextIndex
-            else {
-            return nil
-        }
+        guard pages.count > nextIndex   else { return nil }
         return pages[nextIndex]
     }
 }
 
-extension OnboardingViewController: UIPageViewControllerDelegate { }
+extension ScanCodePageViewController: UIPageViewControllerDelegate { }

@@ -20,11 +20,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0{
-            let cell = profileTableView.dequeueReusableCell(withIdentifier: "profileHeading", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "profileHeading", for: indexPath)
             return cell
-        } else if indexPath.row == 1{
+        } else if indexPath.row == 1 {
             let imageQR = displayQRCode(code: qrcode)
-            let cell = profileTableView.dequeueReusableCell(withIdentifier: "profile", for: indexPath) as! BarcodeTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "profile", for: indexPath) as! BarcodeTableViewCell
             let scaleX = cell.barcodeImage.frame.size.width / imageQR.extent.size.width
             let scaleY = cell.barcodeImage.frame.size.height / imageQR.extent.size.height
             let transformedImage = imageQR.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
@@ -36,11 +36,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.backView.layer.shadowRadius = 9
             cell.nameTextLabel.text = name
             return cell
-        } else if indexPath.row == 2{
-            let cell = profileTableView.dequeueReusableCell(withIdentifier: "wifiHeading", for: indexPath)
+        } else if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "wifiHeading", for: indexPath)
             return cell
-        } else if indexPath.row == 3{
-            let cell = profileTableView.dequeueReusableCell(withIdentifier: "wifiCredentials", for: indexPath) as! WifiCredentialsTableViewCell
+        } else if indexPath.row == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "wifiCredentials", for: indexPath) as! WifiCredentialsTableViewCell
             cell.cardView.layer.shadowColor = UIColor.black.cgColor
             cell.cardView.layer.shadowOpacity = 1
             cell.cardView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
@@ -48,19 +48,19 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.usernameTextLabel.text = wifiUser
             cell.passwordTextLabel.text = wifiPassword
             return cell
-        } else if indexPath.row == 4{
-            let cell = profileTableView.dequeueReusableCell(withIdentifier: "scannedHeading", for: indexPath)
+        } else if indexPath.row == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "scannedHeading", for: indexPath)
             return cell
         } else {
-            let cell = profileTableView.dequeueReusableCell(withIdentifier: "food", for: indexPath) as! ScannedFoodTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath) as! ScannedFoodTableViewCell
             cell.cardView.layer.shadowColor = UIColor.black.cgColor
             cell.cardView.layer.shadowOpacity = 1
             cell.cardView.layer.shadowOffset = CGSize.init(width: 2, height: 2)
             cell.cardView.layer.shadowRadius = 9
-            let flag = mealsSchedule[indexPath.row - 5] as! NSDictionary
-            cell.nameLabel.text = flag["name"] as! String
-            cell.dateLabel.text = flag["date"] as! String
-            cell.timeLabel.text = flag["startTime"] as! String
+            let flag = mealsSchedule[indexPath.row - 5]
+            cell.nameLabel.text = flag["name"] as? String
+            cell.dateLabel.text = flag["date"] as? String
+            cell.timeLabel.text = flag["startTime"] as? String
             let participants = flag["participantsPresent"] as! [String]
             if participants.contains(userID) {
                 cell.tick.isHidden = false
@@ -118,11 +118,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         profileTableView.delegate = self
         profileTableView.dataSource = self
-//        displayQRCode(qr: code)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

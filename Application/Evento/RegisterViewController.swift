@@ -18,53 +18,38 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBAction func registerAction(_ sender: Any) {
-        disableControls()
-        if contactTextField.text! != "" && usernameTextField.text! != "" && nameTextField.text! != "" && passwordTextField.text! != "" && emailTextField.text! != ""{
-            let route = "/authenticate/user/register"
-            let url = constants.baseURL + route
-            Alamofire.request(url, method: .post, parameters: ["name":nameTextField.text!, "email":emailTextField.text!, "password":passwordTextField.text!, "username":usernameTextField.text!, "contact":contactTextField.text!]).responseJSON{
-                response in if response.result.isSuccess {
-                    if let a:NSDictionary = response.result.value! as! NSDictionary{
-                        if a["success"] as! Bool == true {
-                            self.alertView(message: "Authentication Successfull", title: "Welcome to the Evento family!")
-                        } else {
-                            self.alertView(message: "Authentication Failure", title: "Please try again!")
-                        }
-                    }
-                }
-                self.enableControls()
+        changeControls(enable: false)
+        if contactTextField.text! == "" && usernameTextField.text! == "" && nameTextField.text! == "" && passwordTextField.text! == "" && emailTextField.text! == "" {
+            self.changeControls(enable: true)
+            AlertView.show(title: "Please fill all the required details", message: "Fields empty!", viewController: self)
+            return
+        }
+        
+        NetworkEngine.registerUser(username: usernameTextField.text!, password: passwordTextField.text!, email: emailTextField.text!, phoneNumber: contactTextField.text!, name: nameTextField.text!) { (success) in
+            self.changeControls(enable: true)
+            if success {
+                AlertView.show(title: "Welcome to the Evento family!", message: "Authentication Successfull", viewController: self)
+            } else {
+                AlertView.show(title: "Please try again!", message: "Authentication Failure", viewController: self)
             }
-        } else {
-            alertView(message: "Fields empty!", title: "Please fill all the required details")
         }
     }
     
-    func alertView(message: String, title:String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    func enableControls(){
-        activityIndicator.stopAnimating()
-        activityIndicator.isHidden = true
-        usernameTextField.isEnabled = true
-        passwordTextField.isEnabled = true
-        contactTextField.isEnabled = true
-        nameTextField.isEnabled = true
-        emailTextField.isEnabled = true
-        registerButton.isEnabled = true
-    }
-    func disableControls(){
-        activityIndicator.startAnimating()
-        activityIndicator.isHidden = false
-        usernameTextField.isEnabled = false
-        passwordTextField.isEnabled = false
-        contactTextField.isEnabled = false
-        nameTextField.isEnabled = false
-        emailTextField.isEnabled = false
-        registerButton.isEnabled = false
+    
+    func changeControls(enable: Bool) {
+        if enable == true {
+            activityIndicator.stopAnimating()
+        } else {
+            activityIndicator.startAnimating()
+        }
+        activityIndicator.isHidden = enable
+        usernameTextField.isEnabled = enable
+        passwordTextField.isEnabled = enable
+        contactTextField.isEnabled = enable
+        nameTextField.isEnabled = enable
+        emailTextField.isEnabled = enable
+        registerButton.isEnabled = enable
     }
     
     func dismissKeyboard() {
@@ -93,6 +78,5 @@ class RegisterViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

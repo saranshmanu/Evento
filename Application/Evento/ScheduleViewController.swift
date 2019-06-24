@@ -17,39 +17,30 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = timelineTableView.dequeueReusableCell(withIdentifier: "timeline", for: indexPath) as! TimelineTableViewCell
-        if schedule != nil{
-            let flag = schedule[indexPath.row] as! NSDictionary
-            cell.title.text = flag["name"] as! String
-            cell.time.text = flag["startTime"] as! String
-            cell.date.text = flag["date"] as! String
-            let date = Date()
-            let calender = Calendar.current
-            let currentDate = date.timeIntervalSince1970
-            var isoDate = cell.date.text! + "T" + cell.time.text!
-//            isoDate = String(isoDate.dropLast())
-//            isoDate = String(isoDate.dropLast())
-//            isoDate = String(isoDate.dropLast())
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            dateFormatter.dateFormat = "dd-MM-yyyy'T'HH:mm' 'a"
-            dateFormatter.amSymbol = "AM"
-            dateFormatter.pmSymbol = "PM"
-            let sessionDate = dateFormatter.date(from:isoDate)!
-            let session = sessionDate.timeIntervalSince1970
-            if session <= currentDate {
-                cell.tick.isHidden = false
-            } else {
-                cell.tick.isHidden = true
-            }
+        let flag = schedule[indexPath.row]
+        cell.title.text = flag["name"] as? String
+        cell.time.text = flag["startTime"] as? String
+        cell.date.text = flag["date"] as? String
+        let date = Date()
+        let currentDate = date.timeIntervalSince1970
+        let isoDate = cell.date.text! + "T" + cell.time.text!
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "dd-MM-yyyy'T'HH:mm' 'a"
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
+        let sessionDate = dateFormatter.date(from:isoDate)!
+        let session = sessionDate.timeIntervalSince1970
+        if session <= currentDate {
+            cell.tick.isHidden = false
+        } else {
+            cell.tick.isHidden = true
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         timelineTableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
     }
     
     @IBAction func refresh(_ sender: Any) {
@@ -60,7 +51,6 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
                 let c = b["eventSessions"] as! [NSDictionary]
                 self.schedule = c
                 self.timelineTableView.reloadData()
-                print("timeline reloaded")
             }
         }
     }

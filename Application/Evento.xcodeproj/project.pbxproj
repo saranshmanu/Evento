@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1153301CEFB47C5F43CFC42F /* Pods_EventoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A081031D2DB48353415DBF /* Pods_EventoTests.framework */; };
-		95501FBE2104CAB700BC67EF /* MoreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95501FBD2104CAB700BC67EF /* MoreDetailsViewController.swift */; };
+		95501FBE2104CAB700BC67EF /* KeynoteSpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95501FBD2104CAB700BC67EF /* KeynoteSpeakersViewController.swift */; };
 		95501FC02104DDAE00BC67EF /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95501FBF2104DDAE00BC67EF /* TimelineTableViewCell.swift */; };
 		95762F5C21035E1300309296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95762F5B21035E1300309296 /* AppDelegate.swift */; };
 		95762F6121035E1300309296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95762F5F21035E1300309296 /* Main.storyboard */; };
@@ -25,13 +25,14 @@
 		95A073DB21066423003275CD /* SpeakersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A073DA21066423003275CD /* SpeakersCollectionViewCell.swift */; };
 		95ADA38D2103609500C4E2D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA38C2103609500C4E2D3 /* LoginViewController.swift */; };
 		95ADA38F210360A300C4E2D3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA38E210360A200C4E2D3 /* RegisterViewController.swift */; };
-		95ADA391210363F800C4E2D3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA390210363F800C4E2D3 /* OnboardingViewController.swift */; };
+		95ADA391210363F800C4E2D3 /* ScanCodePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA390210363F800C4E2D3 /* ScanCodePageViewController.swift */; };
 		95ADA3A821036EE900C4E2D3 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3A721036EE900C4E2D3 /* QRViewController.swift */; };
 		95ADA3AA2103898A00C4E2D3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3A92103898900C4E2D3 /* Constants.swift */; };
 		95ADA3AE2103924B00C4E2D3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3AD2103924B00C4E2D3 /* ScheduleViewController.swift */; };
 		95ADA3B02103925B00C4E2D3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3AF2103925B00C4E2D3 /* ProfileViewController.swift */; };
 		95ADA3B2210397C300C4E2D3 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ADA3B1210397C300C4E2D3 /* HomeTabBarController.swift */; };
 		95B2DAD3210681C800F67771 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2DAD2210681C800F67771 /* NetworkEngine.swift */; };
+		95E1F68122C0B04C00FB2735 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1F68022C0B04C00FB2735 /* Utils.swift */; };
 		C477C53683D8540E970A60D0 /* Pods_EventoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77BDDBA82114F9E00D96C98 /* Pods_EventoUITests.framework */; };
 		DBC1E66545F09EA2B180D72A /* Pods_Evento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9680876487DDE5FFC0E1176 /* Pods_Evento.framework */; };
 /* End PBXBuildFile section */
@@ -59,7 +60,7 @@
 		586980DF089ED8FD1DB2CF60 /* Pods-EventoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventoUITests/Pods-EventoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		78A63F106EAB792A1A56BDB8 /* Pods-EventoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventoTests/Pods-EventoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7AE6C6D41FCFC726C7052C5E /* Pods-EventoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventoUITests/Pods-EventoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		95501FBD2104CAB700BC67EF /* MoreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsViewController.swift; sourceTree = "<group>"; };
+		95501FBD2104CAB700BC67EF /* KeynoteSpeakersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeynoteSpeakersViewController.swift; sourceTree = "<group>"; };
 		95501FBF2104DDAE00BC67EF /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		95762F5821035E1300309296 /* Evento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95762F5B21035E1300309296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,13 +83,14 @@
 		95A073DA21066423003275CD /* SpeakersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersCollectionViewCell.swift; sourceTree = "<group>"; };
 		95ADA38C2103609500C4E2D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		95ADA38E210360A200C4E2D3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = "/Users/saranshmittal/Google Drive/Development/Project Archive/Project - iOS/Editor Choice/2018 iOS Evento - Event application/Application/Evento/RegisterViewController.swift"; sourceTree = "<absolute>"; };
-		95ADA390210363F800C4E2D3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		95ADA390210363F800C4E2D3 /* ScanCodePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodePageViewController.swift; sourceTree = "<group>"; };
 		95ADA3A721036EE900C4E2D3 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		95ADA3A92103898900C4E2D3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		95ADA3AD2103924B00C4E2D3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleViewController.swift; path = "/Users/saranshmittal/Google Drive/Development/Project Archive/Project - iOS/Editor Choice/2018 iOS Evento - Event application/Application/Evento/ScheduleViewController.swift"; sourceTree = "<absolute>"; };
 		95ADA3AF2103925B00C4E2D3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		95ADA3B1210397C300C4E2D3 /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		95B2DAD2210681C800F67771 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
+		95E1F68022C0B04C00FB2735 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		991050C810D801B95AEC6225 /* Pods-Evento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evento.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Evento/Pods-Evento.debug.xcconfig"; sourceTree = "<group>"; };
 		B9680876487DDE5FFC0E1176 /* Pods_Evento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDDF952211BB210EF51799C2 /* Pods-Evento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evento.release.xcconfig"; path = "Pods/Target Support Files/Pods-Evento/Pods-Evento.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,15 @@
 				7AE6C6D41FCFC726C7052C5E /* Pods-EventoUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9551576F22C0FEDE00F6748D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				95ADA38C2103609500C4E2D3 /* LoginViewController.swift */,
+				95ADA38E210360A200C4E2D3 /* RegisterViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		95762F4F21035E1300309296 = {
@@ -201,15 +212,14 @@
 			isa = PBXGroup;
 			children = (
 				95762F5B21035E1300309296 /* AppDelegate.swift */,
-				95ADA38E210360A200C4E2D3 /* RegisterViewController.swift */,
-				95ADA38C2103609500C4E2D3 /* LoginViewController.swift */,
+				95ADA390210363F800C4E2D3 /* ScanCodePageViewController.swift */,
 				95ADA3A721036EE900C4E2D3 /* QRViewController.swift */,
-				95ADA390210363F800C4E2D3 /* OnboardingViewController.swift */,
-				95501FBD2104CAB700BC67EF /* MoreDetailsViewController.swift */,
+				95ADA3B1210397C300C4E2D3 /* HomeTabBarController.swift */,
+				95A073D621066383003275CD /* HomeViewController.swift */,
+				95501FBD2104CAB700BC67EF /* KeynoteSpeakersViewController.swift */,
 				95ADA3AD2103924B00C4E2D3 /* ScheduleViewController.swift */,
 				95ADA3AF2103925B00C4E2D3 /* ProfileViewController.swift */,
-				95A073D621066383003275CD /* HomeViewController.swift */,
-				95ADA3B1210397C300C4E2D3 /* HomeTabBarController.swift */,
+				9551576F22C0FEDE00F6748D /* Authentication */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -219,6 +229,7 @@
 			children = (
 				95B2DAD2210681C800F67771 /* NetworkEngine.swift */,
 				95ADA3A92103898900C4E2D3 /* Constants.swift */,
+				95E1F68022C0B04C00FB2735 /* Utils.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,8 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				95501FBF2104DDAE00BC67EF /* TimelineTableViewCell.swift */,
-				95A073D021061F2D003275CD /* WifiCredentialsTableViewCell.swift */,
 				95A073D221063F88003275CD /* BarcodeTableViewCell.swift */,
+				95A073D021061F2D003275CD /* WifiCredentialsTableViewCell.swift */,
 				95A073D4210650E3003275CD /* ScannedFoodTableViewCell.swift */,
 			);
 			path = TableViewCell;
@@ -501,13 +512,14 @@
 				95ADA3A821036EE900C4E2D3 /* QRViewController.swift in Sources */,
 				95A073DB21066423003275CD /* SpeakersCollectionViewCell.swift in Sources */,
 				95A073D321063F88003275CD /* BarcodeTableViewCell.swift in Sources */,
-				95ADA391210363F800C4E2D3 /* OnboardingViewController.swift in Sources */,
-				95501FBE2104CAB700BC67EF /* MoreDetailsViewController.swift in Sources */,
+				95ADA391210363F800C4E2D3 /* ScanCodePageViewController.swift in Sources */,
+				95501FBE2104CAB700BC67EF /* KeynoteSpeakersViewController.swift in Sources */,
 				95ADA3AE2103924B00C4E2D3 /* ScheduleViewController.swift in Sources */,
 				95501FC02104DDAE00BC67EF /* TimelineTableViewCell.swift in Sources */,
 				95762F5C21035E1300309296 /* AppDelegate.swift in Sources */,
 				95A073D921066410003275CD /* SponsorsCollectionViewCell.swift in Sources */,
 				95A073D5210650E3003275CD /* ScannedFoodTableViewCell.swift in Sources */,
+				95E1F68122C0B04C00FB2735 /* Utils.swift in Sources */,
 				95ADA38F210360A300C4E2D3 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
